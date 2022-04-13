@@ -1,2 +1,2 @@
-# Game-Marketplace
-Marketplace de jogos em mídia digital
+# GhostProject
+repositório teste para o projeto de experiencia criativa.
