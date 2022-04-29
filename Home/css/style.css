@@ -2,7 +2,14 @@
 
 @font-face{
     font-family: ps1;
-    src: url('../fonts/zrnic.ttf');
+    src: url('../../assets/fonts/zrnic.ttf');
+}
+
+/*Retro Font*/
+
+@font-face{
+    font-family: retro;
+    src: url('../../assets/fonts/Retro.ttf');
 }
 
 
@@ -10,14 +17,18 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: retro;
 }
 
 body{
-    background: linear-gradient(to bottom,#365853 0.5%, #1E1E1E 70%);
+    background: linear-gradient(to bottom,#434345 0.5%, #1E1E1E 70%);
     
     
 }
+
+
+
+/*Footer*/
 
 .footer{
     width: 100%;
@@ -28,7 +39,7 @@ body{
 
 }
 
-/*Footer*/
+
 
 #rights{
     display: inline-block;
@@ -71,7 +82,7 @@ body{
 }
 
 .nav{
-    margin-left: 24%;
+    margin-left: 22%;
     padding-top: 35px;
 }
 
@@ -87,7 +98,11 @@ body{
 
 .nav a:hover{
     border-bottom: 2px solid ;
-    color: #21A894;
+    color: #7e2ab6;
+
+    text-shadow: /*0 0 0.2em hsl(0 0% 100% / 0.5),*/ 0 0 1em #7e2ab6;
+
+    /*box-shadow: 0 10px 1em -0.3em #7e2ab6;*/
 }
 
 #ghostLogo{
@@ -104,7 +119,8 @@ body{
 }
 
 #heartIcon:hover{
-    color: #21A894;
+    color: #7e2ab6;
+    text-shadow:  0 0 1em #7e2ab6;
     cursor: pointer;
 }
 
@@ -117,12 +133,13 @@ body{
     display: inline-block;
     font-size: 18px;
     color: rgb(189, 189, 189);
-    margin-left: 80px;
+    margin-left: 40px;
     transition: .3s;
 }
 
 #cartIcon:hover{
-    color: #21A894;
+    color: #7e2ab6;
+    text-shadow:  0 0 1em #7e2ab6;
     cursor: pointer;
 }
 
@@ -169,8 +186,8 @@ body{
 
 #headMoney{
     position: relative;
-    font-size: 14px;
-    left: -74px;
+    font-size: 11px;
+    left: -100px;
     color: rgb(163, 163, 163);
     transition: .4s;
 }
@@ -179,24 +196,37 @@ body{
     color: rgb(189, 189, 189);
 }
 
+#logout{
+    position: relative;
+    color: rgb(163, 163, 163);
+    font-size: 10px;
+    left: -98px;
+}
+
+#logout:hover{
+    color: rgb(189, 189, 189);
+}
+
 .loginButtonH a{
     display: inline-block;
     text-decoration: none;
-    border: 3px solid #1a7e6f;
+    border: 3px solid #4b196c;
     border-radius: 8px;
-    color: rgb(163, 163, 163);
+    color: #4b196c;
     width: 130px;
     height: 40px;
     text-align: center;
     padding-top: 7px;
     margin-left: 75px;
-    margin-top: 24px;
+    margin-top: 27px;
     transition: .3s;
 }
 
 .loginButtonH a:hover{
-    border: 3px solid #1e9281;
-    color: rgb(189, 189, 189);
+    border: 3px solid #7e2ab6;
+    text-shadow:  0 0 1em #7e2ab6;
+    box-shadow:  0 0 0.5em #7e2ab6;
+    color: #7e2ab6;
 }
 
 

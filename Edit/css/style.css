@@ -1,0 +1,395 @@
+@font-face{
+    font-family: retro;
+    src: url('../../assets/fonts/Retro.ttf');
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*Header|footer*/
+
+body{
+    background: linear-gradient(to bottom,#365853 0.5%, #1E1E1E 70%);
+    
+    font-family: retro;
+}
+
+
+
+
+#rights{
+display: inline-block;
+margin-left: 11%;
+padding-top: 20px;
+word-wrap: break-word;
+max-width: 850px;
+font-size: 11px;
+color: rgb(179, 179, 179);
+}
+
+.navFooter{
+font-size: 12px;
+margin-left: 11%;
+margin-top: 20px;
+}
+
+.navFooter a {
+margin-right: 20px;
+color: rgb(155, 155, 155);
+text-decoration: none;
+transition: .3s;
+}
+
+.navFooter a:hover{
+color: rgb(194, 194, 194);
+}
+
+.container{
+color: rgb(189, 189, 189);
+}
+
+/*Header*/
+
+.header{
+width:100%;
+height: 100px;
+background-color: #1E1E1E;
+
+}
+
+.nav{
+margin-left: 22%;
+padding-top: 35px;
+}
+
+.nav a{
+display: inline-block;
+font-size: 18px;
+text-decoration: none;
+color: rgb(189, 189, 189);
+margin-left: 55px;
+border: 2px transparent;
+transition: .3s;
+}
+
+.nav a:hover{
+border-bottom: 2px solid ;
+color: #7e2ab6;
+
+text-shadow: /*0 0 0.2em hsl(0 0% 100% / 0.5),*/ 0 0 1em #7e2ab6;
+
+/*box-shadow: 0 10px 1em -0.3em #7e2ab6;*/
+}
+
+#ghostLogo{
+width: 150px;
+height: 84px;
+}
+
+#heartIcon{
+display: inline-block;
+font-size: 18px;
+color: rgb(189, 189, 189);
+margin-left: 90px;
+transition: .3s;
+}
+
+#heartIcon:hover{
+color: #7e2ab6;
+text-shadow:  0 0 1em #7e2ab6;
+cursor: pointer;
+}
+
+#heartText{
+display: inline-block;
+margin-left: 10px;  
+font-family: retro;
+}
+
+#cartIcon{
+display: inline-block;
+font-size: 18px;
+color: rgb(189, 189, 189);
+margin-left: 40px;
+transition: .3s;
+}
+
+#cartIcon:hover{
+color: #7e2ab6;
+text-shadow:  0 0 1em #7e2ab6;
+cursor: pointer;
+}
+
+
+.headContent{
+display: flex;
+}
+
+.headerProf{
+margin-left: 30px;
+padding-top: 23px;
+}
+
+.headerProf a{
+display: inline-block;
+text-decoration: none;
+}
+
+#headImg{
+border: 1px solid rgb(143, 143, 143); 
+transition: .7s;
+}
+
+#headImg:hover{
+border: 1px solid #47867c; 
+}
+
+#userHeader{
+color: rgb(189, 189, 189);
+margin-left: 4px;
+position: relative;
+top: -25px;
+transition: .4s;
+}
+
+#userHeader:hover{
+color: #47867c;
+}
+
+#arrDownIcon{
+font-size: 14px;
+margin-left: 2px;
+}
+
+#headMoney{
+position: relative;
+font-size: 11px;
+left: -100px;
+color: rgb(163, 163, 163);
+transition: .4s;
+}
+
+#headMoney:hover{
+color: rgb(189, 189, 189);
+}
+
+#logout{
+position: relative;
+color: rgb(163, 163, 163);
+font-size: 10px;
+left: -98px;
+}
+
+#logout:hover{
+color: rgb(189, 189, 189);
+}
+
+
+
+
+
+.nameEdit{
+    width: 800px;
+    height: 90px;
+    background-color: #363636;
+    margin: auto;
+}
+
+#editAvtr{
+    width: 66px;
+    height: 66px;
+    margin-left: 18px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: solid 3px #6248AF;
+}
+
+#editUser{
+    font-size: 21px;
+    color: rgb(212, 212, 212);
+    position: relative;
+    top: -25px;
+    left: 10px;
+}
+
+.editCont{
+    
+    width: 800px;
+    height: 500px;
+    /*background: linear-gradient(to bottom, #363636 2%, #20252c 30%);
+    background: linear-gradient(180deg, #2b333a -3.38%, #1D1E20 78.58%);*/
+    background: linear-gradient(180deg, #363636 -3.38%, #1D1E20 78.58%);
+    margin: auto;
+    margin-top: 20px;
+    color: rgb(212, 212, 212);
+}
+
+.editCont{
+    padding: 20px;
+    
+}
+
+.editProfileContent{
+    display: flex;
+}
+
+.userInfo{
+    margin-left: 15px;
+    display: block;
+}
+
+.editCont h3{
+    margin-bottom: 50px;
+    border-bottom: 2px solid #535353;
+    line-height:3em;
+}
+
+.userInfo span{
+    color: rgb(185, 185, 185);
+}
+
+.userInfo input[type="text"]{
+    color: rgb(185, 185, 185);
+    width: 400px;
+    height: 35px;
+    outline: none;
+    border: solid 1px #373a41;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    margin-top: 8px;
+    padding: 8px;
+    background-color: #292929;
+    transition: 0.4s;
+}
+
+#about{
+    width: 400px;
+    min-height: 90px;
+    color: rgb(185, 185, 185);
+    outline: none;
+    border: solid 1px #373a41;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    margin-top: 8px;
+    background-color: #292929;
+    resize: none;
+    overflow: hidden;
+    padding: 8px;
+    transition: 0.4s;
+}
+
+
+.uploadImg{
+    position: relative;
+    left: 25px;
+    top: 2px;
+    
+}
+
+.uploadImg input[type='file'] {
+    display: none;
+}
+  
+.uploadImg label {
+    background-color: #3498db;
+    font-size: 14px;
+    border-radius: 5px;
+    color: #fff;
+    margin: 50px;
+    padding: 6px 20px;
+    transition: .3s;
+}
+  
+.uploadImg label:hover {
+    background-color: #2980b9;
+    cursor: pointer;
+}
+
+#file-name {
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 63px;
+    position: absolute;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 260px;
+    overflow: hidden
+}
+
+.submitBtns {
+    display: inline-block;
+    position: absolute;
+    margin-top: 90px;  
+}
+
+.cancel{
+    display: inline-block;
+    text-decoration: none;
+    font-size: 13px;
+    text-align: center;
+    padding: 2px;
+    width: 150px;
+    height: 22px;
+    margin-right: 5px;
+    border-radius: 4px;
+    border: 0px;
+    background-color: rgb(95, 95, 95);
+    color: rgb(199, 199, 199);
+    transition: .3s;
+}
+
+.cancel:hover{
+    background-color: rgb(121, 121, 121);
+    color: rgb(221, 221, 221);
+    cursor: pointer;
+}
+
+.upBtn{
+    width: 150px;
+    height: 22px;
+    border-radius: 4px;
+    border: 0px;
+    background: linear-gradient( to right, #7A5ED1 8%, #240090 95%);
+    color: rgb(199, 199, 199);
+    transition: .3s ;
+}
+
+.upBtn:hover{
+    background: #795bd3;
+    color: rgb(221, 221, 221);
+    cursor: pointer;
+}
+
+#avMed {
+    width: 100px;
+    height: 100px;
+    margin-left: 100px;
+    margin-top: 35px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: solid 3px #6248AF;
+}
+
+#sizeSp{
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-left: 18px;
+    color: rgb(180, 180, 180);
+    
+}
+
+#dest{
+    display: inline-block;
+    font-size: 35px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 105px;
+    padding-left: 20px;
+    border-left: 3px solid #4e20da;
+    color: rgb(221, 221, 221);
+    
+}

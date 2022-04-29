@@ -5,11 +5,6 @@
     src: url('../fonts/zrnic.ttf');
 }
 
-@font-face{
-    font-family: retro;
-    src: url('../../assets/fonts/Retro.ttf');
-}
-
 
 *{
     padding: 0;
@@ -205,149 +200,18 @@ body{
     color: rgb(189, 189, 189);
 }
 
-
-/*Login*/
-
-
-.prevHigh, .nextHigh{
-    cursor: pointer;
-
-    width: 50px;
-    height: 225px;
-    height: 60%;
-    position: absolute;
-    /*margin-top: -470px;*/
-    margin-top: -30.9%;
-    padding-left: 19px;
-    padding-top: 90px;
-    color: white;
-    font-weight: bold;
-    font-size: 35px;
-    transition: 0.6s ease;
-
-    user-select: none;
-}
-
 .bodyV2{
     background: radial-gradient(to bottom,#365853 0.5%, #1E1E1E 70%);
 }
 
-.loginSpace{
-    display: flex;
-}
 
-.loginLeft{
-    min-width: 55%;
-    min-height: 645px;
-    background: radial-gradient(30% 40% at 40% 30%,
-     #313131 0%, rgba(99, 153, 126, 0) 100%) -50vw no-repeat,
-      url(../img/library.jpeg) 0 no-repeat, #202221;
-    background-size: 950px;
-    background-position: -350px;    
-}
 
-.loginRight{
-    width: 100%;
-    background-color: rgb(36, 36, 36);
-}
-
-.login{
-    width: 350px;
-    height: 500px;
-    margin-left: 55%;
-    padding-top: 100px;
-    transition: .4s;
-}
-
-.login input[type="text"], .login input[type="password"]{
-    display: block;
-    width: 300px;
-    height: 40px;
-    outline: none;
-    border-radius: 6px;
-    background: rgb(53, 56, 54);
-    margin-top: 15px;
-    color:rgb(187, 187, 187);
-    border: 0px;
-    text-indent: 5px;
-    transition: .3s;
-}
+/*Cadastro*/
 
 ::placeholder{
     color:rgb(187, 187, 187);
     padding: 3px;
 }
-
-.login input[type="submit"]{
-    display: block;
-    width: 300px;
-    height: 43px;
-    background-color: #47867c;
-    border-radius: 6px;
-    border: 0;
-    margin-top: 30px;
-    color:rgb(187, 187, 187);
-    transition: .3s;;
-}
-
-.login input[type="submit"]:hover{
-    background-color: #56968b;
-    color:rgb(201, 201, 201);
-    cursor: pointer;
-}
-
-#loginText{
-    display: inline-block;
-    font-size: 42px;
-    color:rgb(187, 187, 187);
-    margin-bottom: 15px;
-    font-weight: lighter;
-    
-}
-
-#forgot{
-    display: inline-block;
-    font-size: 13px;
-    color:rgb(187, 187, 187);
-    text-decoration: none;
-    margin-top: 13px; 
-    margin-left: 176px;
-    transition: .3s;
-}
-
-#forgot:hover{
-    color:rgb(201, 201, 201);
-}
-
-
-
-.newUser{
-    margin-top: 6px;
-}
-
-
-#newUserText{
-    display: inline-block;
-    font-size: 14px;
-    color:rgb(187, 187, 187);
-
-}
-
-#newUserA{
-    display: inline-block;
-    font-size: 13px;
-    color:rgb(187, 187, 187);
-    margin-left: 5px;
-    text-decoration: none;
-    transition: .3s;
-}
-
-#newUSerA:hover{
-    color:rgb(201, 201, 201);
-}
-
-
-/*Cadastro*/
 
 .signBack{
     min-height: 645px;
@@ -412,6 +276,11 @@ body{
 }
 
 
+
+
+
+
+
 /*Responsivo*/
 
 @media screen and (max-width: 1400px) {
@@ -436,52 +305,6 @@ body{
         margin-left: 60px;
     }
 }
-
-/*Two factor auth*/
-
-.twoFactor input{
-    display: inline-block;
-    width: 70px;
-    height: 85px;
-    border-radius: 8px;
-    border: 0px;
-    outline: none;
-    background-color: rgb(54, 54, 54);
-    color: rgb(187, 187, 187);
-    font-size: 40px;
-    text-align: center;
-    transition: .3s;
-}
-
-#twoAuthForm{
-    margin-left: 50%;  
-    margin-top: 190px;
-}
-
-#twoAuthText{
-    display: block;
-    font-size: 20px;
-    margin-bottom: 30px;
-}
-
-#submitTwo{
-    display: block;
-    width: 280px;
-    height: 45px;
-    font-size: 16px;
-    background-color: #47867c;
-    margin-top: 20px;
-    margin-left: 38px;
-    transition: .3s;
-}
-
-#submitTwo:hover{
-    background-color: #56968b;
-    color:rgb(201, 201, 201);
-    cursor: pointer;
-}
-
-
 
 
 @media screen and (max-width: 1200px) {

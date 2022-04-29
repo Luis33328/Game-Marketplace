@@ -28,9 +28,19 @@
                     
 
                     <div class="nav">
-                        <a href="../index.html">Home</a>
+                        <a href="../index.php">Home</a>
                         <a href="">Biblioteca</a>
-                        <a href="">Meu Perfil</a>
+                        <?php
+
+                            session_start();
+                    
+                            if(isset($_SESSION["loggedIn"])){
+                                echo'<a href="profile.php">Meu Perfil</a>';
+                            }
+                            else{
+                                echo'<a href="../Login/login.php">Meu Perfil</a>';
+                            }
+                        ?>
                         <a href="">Sobre</a>
 
                         <i id="heartIcon" class="fa-regular fa-heart"><span id="heartText">Favoritos</span></i>
@@ -46,7 +56,7 @@
                     </div>-->
 
                     <div class="loginButtonH">
-                        <a href="login.html" >Fazer Login</a>
+                        <a href="login.php" >Fazer Login</a>
                     </div>
                 </div>
 

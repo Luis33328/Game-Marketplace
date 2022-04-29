@@ -28,9 +28,19 @@
                     
 
                     <div class="nav">
-                        <a href="../index.html">Home</a>
+                        <a href="../index.php">Home</a>
                         <a href="">Biblioteca</a>
-                        <a href="">Meu Perfil</a>
+                        <?php
+
+                            session_start();
+                    
+                            if(isset($_SESSION["loggedIn"])){
+                                echo'<a href="profile.php">Meu Perfil</a>';
+                            }
+                            else{
+                                echo'<a href="../Login/login.php">Meu Perfil</a>';
+                            }
+                        ?>
                         <a href="">Sobre</a>
 
                         <i id="heartIcon" class="fa-regular fa-heart"><span id="heartText">Favoritos</span></i>
@@ -46,7 +56,7 @@
                     </div>-->
 
                     <div class="loginButtonH">
-                        <a href="login.html" >Fazer Login</a>
+                        <a href="login.php" >Fazer Login</a>
                     </div>
                 </div>
 
@@ -55,22 +65,20 @@
 
             <div class="loginSpace">
                 <div class="loginLeft">
-                    <form method="POST" action="loginAuth.php">
-                        <div class="login">
+                    <form id="twoAuthForm" action="../index.php">
+                        <span id="twoAuthText">Digite o código enviado ao seu e-mail:</span>
+                        <div class="twoFactor">
 
-                            <span id="loginText">Iniciar Sessão</span>
+                            
 
-                            <input id="username" type="text" name="username" placeholder="Usuário" autocomplete="off" /> 
-                            <input id="password" type="password" name="password" placeholder="Senha" autocomplete="off" /> 
+                            <input id="num1" type="text" name="num1" autocomplete="off" maxlength="1" /> 
+                            <input id="num2" type="text" name="num1" autocomplete="off" maxlength="1" /> 
+                            <input id="num3" type="text" name="num1" autocomplete="off" maxlength="1" /> 
+                            <input id="num4" type="text" name="num1" autocomplete="off" maxlength="1" /> 
+                            <input id="num5" type="text" name="num1" autocomplete="off"  maxlength="1" /> 
 
-                            <a id="forgot" href="../ForgotPassword/ForgotPassword.html">Esqueci minha senha</a>
+                            <input id="submitTwo" type="submit" name="button" value="LOGIN" />
 
-                            <input id="button" type="submit" name="button" value="LOGIN" />
-
-                            <div class="newUser">
-                                <span id="newUserText">Não tem uma conta?</span>
-                                <a id="newUserA" href="../SignUp/SignUp.html">Cadastre-se</a>
-                            </div>
                         </div>
                     </form>
                 </div>

@@ -24,6 +24,25 @@
     </head>
 
     <body>
+        <?php
+            session_start();
+
+            echo'<script>alert($_SESSION["loggedIn"]["user"])</script>';
+            if(isset($_SESSION["loggedIn"])){
+                $duration = $_SESSION["loggedIn"]["duration"];
+                $start = $_SESSION["loggedIn"]["start"];
+
+                if((time() - $start) > $duration){
+                    unset($_SESSION["loggedIn"]["duration"]);
+                    unset($_SESSION["loggedIn"]["start"]);
+                    unset($_SESSION["loggedIn"]["user"]);
+                    unset($_SESSION["loggedIn"]);
+                }
+
+            }
+
+        ?>
+
         <div class="container">
             <div class="header">
                 <div class="headContent">
@@ -31,9 +50,18 @@
                     <div class="nav">
 
                         <!--<a href=""><img id="ghostLogo" src="public/images/teste_2.svg" /> </a>-->
-                        <a href="index.html">Home</a>
+                        <a href="index.php">Home</a>
                         <a href="">Biblioteca</a>
-                        <a href="">Meu Perfil</a>
+                        <?php
+                    
+                            if(isset($_SESSION["loggedIn"])){
+                                echo'<a href="Profile/profile.php">Meu Perfil</a>';
+                            }
+                            else{
+                                echo'<a href="Login/login.php">Meu Perfil</a>';
+                            }
+                        ?>
+                        
                         <a href="">Sobre</a>
 
                         <i id="heartIcon" class="fa-regular fa-heart"><span id="heartText">Favoritos</span></i>
@@ -41,16 +69,31 @@
                         <i id="cartIcon" class="fa-solid fa-cart-shopping"></i>
                     </div>
 
-                    <!--<div class="headerProf">
-                        <a href="" id="headImg"><image src="public/images/iconBig.png" width="40" height="40"></image></a>
-                        <a id="userHeader" href="">Usuario <i id="arrDownIcon" class="fa-solid fa-angle-down"></i></a>
+                    <?php
+                    
+                        if(isset($_SESSION["loggedIn"])){
+                            echo'
+                            <div class="headerProf">
+                                <a href="" id="headImg"><image src="Home/img/iconBig.png" width="40" height="40"></image></a>
+                                <a id="userHeader" href="">Usuario <i id="arrDownIcon" class="fa-solid fa-angle-down"></i></a>
+        
+                                <a id="headMoney" href="">R$ 00,00</a>
 
-                        <a id="headMoney" href="">R$ 00,00</a>
-                    </div>-->
+                                <a id="logout" href="logout.php">Sair</a>
+                            </div>';
+                        }
 
-                    <div class="loginButtonH">
-                        <a href="Login/Login.html" >Fazer Login</a>
-                    </div>
+                        else{
+                            echo'
+                            <div class="loginButtonH">
+                                <a href="Login/Login.php" >Fazer Login</a>
+                            </div>';
+                        }
+                    ?>
+
+                    <!---->
+
+                    
                 </div>
 
             </div>
