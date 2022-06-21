@@ -1,0 +1,759 @@
+@font-face{
+    font-family: big;
+    src: url('../../assets/fonts/BigPixel.ttf');
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: big;
+}
+
+body{
+    
+    background: linear-gradient(to bottom,#240b3c 0.5%, #1E1E1E 100%);
+    
+    
+    
+}
+
+
+
+/*Footer*/
+
+
+.footer{
+    width: 100%;
+    height: 30px;
+    height: 100px;
+    margin-top: 50px;
+    background-color: #10041b;
+
+}
+
+
+
+#rights{
+    display: inline-block;
+    margin-left: 11%;
+    padding-top: 20px;
+    word-wrap: break-word;
+    max-width: 850px;
+    font-size: 11px;
+    color: rgb(179, 179, 179);
+}
+
+.navFooter{
+    font-size: 12px;
+    margin-left: 11%;
+    margin-top: 20px;
+}
+
+.navFooter a {
+    margin-right: 20px;
+    color: rgb(155, 155, 155);
+    text-decoration: none;
+    transition: .3s;
+}
+
+.navFooter a:hover{
+    color: rgb(194, 194, 194);
+}
+
+.container{
+    color: rgb(189, 189, 189);
+}
+
+/*Header*/
+
+.header{
+    width:100%;
+    height: 100px;
+    background-color: #160625;
+    
+}
+
+.nav{
+    margin-left: 130px;
+    padding-top: 35px;
+}
+
+.nav a{
+    display: inline-block;
+    font-size: 16px;
+    text-decoration: none;
+    color: rgb(218, 218, 218);
+    margin-left: 30px;
+    border: 2px transparent;
+    transition: .3s;
+}
+
+.nav a:hover{
+    border-bottom: 2px solid ;
+    color: #7e2ab6;
+    cursor: pointer;
+    text-shadow: /*0 0 0.2em hsl(0 0% 100% / 0.5),*/ 0 0 1em #7e2ab6;
+
+    /*box-shadow: 0 10px 1em -0.3em #7e2ab6;*/
+}
+
+#ghostLogo{
+    width: 125px;
+    height: 76px;
+    /*fill: linear-gradient(101.9deg, #6477DD 7.67%, #C753C1 52.66%, #DC1DC3 93.7%);*/
+    margin-top: 6px;
+
+}
+
+#heartIcon{
+    display: inline-block;
+    font-size: 16px;
+    color: rgb(218, 218, 218);
+    margin-left: 60px;
+    transition: .3s;
+}
+
+#heartIcon:hover{
+    color: #7e2ab6;
+    text-shadow:  0 0 1em #7e2ab6;
+    cursor: pointer;
+}
+
+#heartText{
+    display: inline-block;
+    margin-left: 10px;  
+}
+
+#cartIcon{
+    display: inline-block;
+    font-size: 16px;
+    color: rgb(218, 218, 218);
+    margin-left: 40px;
+    transition: .3s;
+}
+
+#cartIcon:hover{
+    color: #7e2ab6;
+    text-shadow:  0 0 1em #7e2ab6;
+    cursor: pointer;
+}
+
+
+.headContent{
+    display: flex;
+    margin-left: 8%;
+}
+
+.headerProf{
+    margin-left: 130px;
+    /*margin-left: 130px;*/
+    padding-top: 23px;
+}
+
+.headerProf a{
+    display: inline-block;
+    text-decoration: none;
+}
+
+#headImg{
+    border: 1px solid rgb(143, 143, 143); 
+    transition: .7s;
+}
+
+#headImg:hover{
+    border: 1px solid #915bc7; 
+}
+
+#userHeader{
+    color: rgb(189, 189, 189);
+    margin-left: 4px;
+    position: relative;
+    top: -25px;
+    transition: .4s;
+}
+
+#userHeader:hover{
+    color: #7e2ab6;
+    cursor: pointer;
+    text-shadow: 0 0 1em #7e2ab6;
+}
+
+#arrDownIcon{
+    font-size: 14px;
+    margin-left: 2px;
+}
+
+#headMoney{
+    display: block;
+    position: relative;
+    font-size: 11px;
+    left: 48px;
+    top: -15px;
+    color: rgb(163, 163, 163);
+    transition: .4s;
+}
+
+#headMoney:hover{
+    color: rgb(189, 189, 189);
+}
+
+#logout{
+    display: block;
+    position: relative;
+    color: rgb(163, 163, 163);
+    font-size: 10px;
+    left: 115px;
+    top: -29px;
+    transition: .4s;
+}
+
+#logout:hover{
+    cursor: pointer;
+    color: rgb(189, 189, 189);
+}
+
+.loginButtonH a{
+    display: inline-block;
+    text-decoration: none;
+    font-size: 14px;
+    border: 0px;
+    background: linear-gradient(101.9deg, #7273D9 7.67%, #B35BC7 52.66%, #D927C3 93.7%);
+    border-radius: 8px;
+    color: rgb(218, 218, 218);
+    width: 140px;
+    height: 40px;
+    text-align: center;
+    padding-top: 11px;
+    margin-left: 170px;
+    margin-top: 27px;
+    transition: .3s;
+}
+
+.loginButtonH a:hover{
+    text-shadow:  0 0 1em #7e2ab6;
+    box-shadow:  0 0 0.5em #7e2ab6;
+    color: rgb(235, 235, 235);
+}
+
+
+/*Search*/
+
+#dest{
+    display: inline-block;
+    font-size: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 7%;
+    border-bottom: 4px solid #342741;
+    border-radius: 6px;
+    padding-bottom: 20px;
+    color: rgb(221, 221, 221);
+    
+}
+
+.newGames{
+    margin-left: 16%;
+    margin-top: 40px;
+    
+}
+
+.new{
+    margin-left: 7%;
+    min-height: 350px;
+}
+
+.g3{
+    width: 680px;
+    height: 121px;
+    background-color: #1f2735;
+    margin-right: 50px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+
+    
+    background: linear-gradient(to bottom,  #170e33 3%, #150625 90%);  
+    background-color: #150625;
+    border: 1px solid #ffffff1b;
+}
+
+#nov{
+    display: inline-block;
+    font-size: 30px;
+    margin-bottom: 35px;
+}
+
+.new a {
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(215, 215, 215);
+    transition: .3s;
+}
+
+#small{
+    border-radius: 10px;
+    transition: .3s;
+}
+
+#small:hover{
+    opacity: 0.66;
+    cursor: pointer;
+}
+
+
+.smallName{
+    display: inline-block;
+    font-size: 18px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 290px;
+    display: block;
+    overflow: hidden;
+    transition: .3s;
+
+
+}
+
+.smallName:hover{
+    color: rgb(227, 227, 227);
+    cursor: pointer;
+}
+
+#windows{
+    position: relative;
+    top: 27px;
+    left: 2px;
+    color: rgb(119, 119, 119);
+}
+
+.small-Information{
+    display:inline-block;
+    position:relative;
+    top: -70px;
+    margin-left: 10px;
+    color: rgb(119, 119, 119);
+}
+
+.smallTags{
+    position: relative;
+    top: 50px;
+    left: 2px;
+}
+
+.smallTags:hover{
+    cursor: default;
+}
+
+.class_tag{
+    font-size: 13px;
+    margin-left: 0px;
+}
+
+
+.price{
+    display: block;
+    position: relative;
+    margin-left: 550px;
+    top: -80px;
+}
+
+.priceSp{
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    border-radius: 8px;
+    background: linear-gradient(101.9deg, #6668c2 15.67%, #994eaa 52.66%);
+    color: #bebebe;
+    text-indent: 8px;
+    padding-top: 5px;
+}
+
+.priceSp:hover{
+    cursor: default;
+}
+
+/*Responsivo*/
+
+@media screen and (max-width: 1400px) {
+
+    /*Header*/
+    .nav{
+        margin-left: 5%;
+    }
+
+    .nav a {
+        font-size: 16px;
+        margin-left: 10px;
+    }
+
+    #heartIcon{
+        font-size: 16px;
+        margin-left: 20px;
+    }
+
+    #cartIcon{
+        font-size: 16px;
+        margin-left: 15px;
+    }
+
+    /*Publishers*/
+
+    .publishers{
+        margin-left: 8%;
+    }
+    
+    
+    
+}
+
+@media screen and (max-width: 1200px) {
+
+    /*Header*/
+    .nav{
+        margin-left: 2%;
+    }
+
+    .loginButtonH{
+        margin-left: -50px;
+    }
+
+    .headerProf{
+        margin-left: 50px;
+    }
+
+    /*Destaques*/
+
+    .prevHigh, .nextHigh{
+        width: 40px;
+        font-size: 28px;
+    }
+
+    /*Publishers*/
+    
+    #publiContent{
+        width: 120px;
+        height: 80px;   
+    }
+    
+    #sonyIcon{
+        margin-left: 43px;
+        font-size: 30px;
+    }
+    
+    #sonyText{
+        margin-top: 5px;
+        margin-left: 27px;
+    }
+    
+    #capcomIcon{
+        margin-top: 31px;
+    }
+    
+    #fromSoftwareIcon{
+        margin-top: 35px;
+    }
+    
+    #bandaiIcon{
+        margin-top: 12px;
+    }
+    
+    #konamiIcon{
+        margin-top: 31px;
+    }
+    
+    #devolverIcon{
+        margin-top: 6px;
+    }
+
+
+    /*Recomendações*/
+
+    .recGame{
+        width: 200px;
+    }
+    .forYou{
+        width: 200px;
+    }
+
+    .forYouContent{
+        display: none;
+    }
+
+    .next{
+        margin-left: 570px;
+    }
+
+
+    /*Login*/
+
+    .loginLeft{
+        background-position: -390px;    
+    }
+    
+    .login{
+        margin-left: 30%;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+
+
+    .nav{
+        margin-left: 1%;
+    }
+
+    .loginButtonH{
+        margin-left: -80px;
+    }
+
+    .sale1{
+
+    }
+}
+
+@media screen and (max-width: 1030px) {
+
+    /*Header*/
+
+    .header{
+        height: 80px;
+    }
+
+    .nav{
+        display: none;
+    }
+
+    .loginButtonH{
+        display: none;
+    }
+
+    
+
+    .sale1{
+        margin-top: 30px;
+        margin-right: 15px;
+    }
+
+
+    /*Destaques*/
+
+
+    /*Publishers*/
+
+    .publishers{
+        display: none;
+    }
+
+    /*Descontos*/
+
+
+    .expand{
+        display: none;
+    }
+
+    #saleImage:hover{
+        opacity: 0.7;
+    }
+
+    /*Login*/
+
+    .loginSpace{
+        display: block;
+    }
+
+    .highDesc{
+        display: none;
+    }
+
+    .headerProf{
+        display: none;
+    }
+
+    .highContent{
+        margin-top: -230px;
+        backdrop-filter: none;
+    }
+    .headContent{
+        margin-left: 44%;
+    }
+}
+
+@media screen and (max-width: 800px){
+
+    .highDescT{
+    
+        font-size: 45px;
+    
+    }
+
+    .highContent{
+        margin-top: -200px;
+    }
+
+    
+    
+}
+
+
+@media screen and (max-width: 600px){
+
+    /*Descontos*/
+
+    .promoDivs{
+        display: block;
+    }
+
+    #saleText{
+        margin-left: -50px;
+    }
+
+    .sale1{
+        width: 274px;
+        height: 139px;
+        margin-top: 80px;
+    }
+
+    .promos{
+        margin-left: 22%;
+    }
+
+    .forYou{
+        margin-left: 8%;
+    }
+
+    .fyImg{
+        width: 431px;
+        height: 228;
+    }
+
+    .prev, .next{
+        margin-left: 6px;
+        margin-top: -260px;
+        font-size: 35px;
+        padding-top: 5px;
+    }
+
+    .next{
+        margin-left: 370px;
+    }
+
+    /*Login*/
+
+    .login{
+        margin-left: 32%;
+    }
+
+    .g3{
+        width: 259px;
+        height: 121px;
+        margin-left: 15%;
+    }
+
+    .small-Information{
+        display: none;
+    }
+    .price{
+        display: none;
+    }
+
+    .newGames{
+        margin-left: 22%;
+        margin-top: -38px;
+    }
+
+    
+    .highDescT{
+    
+        font-size: 31px;
+    
+    }
+
+    .highContent{
+        margin-top: -150px;
+    }
+
+    .highBuy{
+        font-size: 13px;
+        width: 80px;
+        height: 30px;
+        padding: 6px;
+    }
+    
+    
+    .highRead{
+        font-size: 11px;
+        width: 80px;
+        height: 30px;
+        margin-left: 50px;
+        padding-left: 12px;
+        padding-top: 9px;
+    }
+
+    .highRead::before{
+        width: 80px;
+        height: 30px;
+
+    }
+
+
+    .headContent{
+        margin-left: 38%;
+    }
+
+
+
+    .search{
+        position: absolute;
+        left: -7%;
+        top: 300px;
+        padding-bottom: 50px;
+    }
+
+    .promos{
+        margin-top: 140px;
+    }
+
+
+}
+
+@media screen and (max-width: 500px){
+
+    /*Descontos*/
+
+    .promos{
+        margin-left: 16%;
+    }
+
+
+    /*Recomendações*/
+    .forYou{
+        margin-left: 25px;
+    }
+
+    #forYouText{
+        margin-left: 0px;
+    }
+
+
+    /*Footer*/
+
+    #rights{
+        font-size: 10px;
+    }
+    
+    .navFooter{
+        font-size: 10px;
+        margin-left: 12%;
+    }
+    
+    .navFooter a{
+        margin-left: -6px;
+    }
+
+
+    .search{
+        left: -15%;
+    }
+
+}

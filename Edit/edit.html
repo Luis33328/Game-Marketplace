@@ -1,0 +1,297 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Meu Perfil</title>
+
+        <script src="https://kit.fontawesome.com/50d53b2eac.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/style.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+    </head>
+
+    <body>
+
+        <div class="container">
+        <div class="header">
+                <div class="headContent">
+                    
+                    <a href="../index.html"><img id="ghostLogo" src="../home/img/logofinal.svg" /> </a>
+
+                    <div class="nav">
+
+                        <!--<a href=""><img id="ghostLogo" src="public/images/teste_2.svg" /> </a>-->
+                        <a href="../index.html">Home</a>
+                        <a href="../Library/library.html">Biblioteca</a>
+                        <a href="../Profile/profile.html">Meu Perfil</a>
+                        
+                        <a href="">Sobre</a>
+
+                        <i id="heartIcon" class="fa-regular fa-heart"><span id="heartText">Favoritos</span></i>
+
+                        <i id="cartIcon" class="fa-solid fa-cart-shopping"></i>
+                    </div>
+
+
+
+                    
+                </div>
+
+            </div>
+
+            <div class="nameEdit">
+
+                
+            </div>
+
+            <form id="uploadForm">
+                <div class="editCont">
+                    <h3 id="infSp">Informações</h3>
+                    <div class="editProfileContent">
+                        <div class="userInfo">
+                                
+
+                        </div>
+                        <div class="uploadImg">
+
+                        </div>
+                    </div>
+                    
+                </div>
+            </form>
+        </div>
+
+        <script>
+
+            $(document).ready(validSession());
+
+            
+
+            function upload(){
+
+                var data = $("#uploadForm").serialize();
+
+                var frm = $('#uploadForm');
+                var formData = new FormData(frm[0]);
+                formData.append('file', $('input[type=file]')[0].files[0]);
+
+                //alert(formData);
+
+                $.ajax({
+                    type: "POST",
+                    enctype: 'multipart/form-data',
+                    dataType: "json",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    url: "upload.php", 
+                    success: function(retorno){
+                        console.log(retorno);
+                        if(retorno.status == "sent"){
+                            location.href = "../Profile/profile.html";
+                        }
+                        else{
+                            alert("Ocorreu um erro ao subir sua imagem.");
+                        }
+                    },
+                    error: function(err){
+                        console.log(err);
+                    }
+                    
+                }); 
+            }      
+            
+            
+
+            function validSession(){
+
+                $.ajax({
+                        type: "GET",
+                        dataType: "json",
+                        //data: data,
+                        url: "../validSession.php", 
+                        success: function(retorno){
+                            console.log(retorno);
+                            header = document.querySelector(".headContent");
+
+                            nameEdit = document.querySelector(".nameEdit");
+                            userInfo = document.querySelector(".userInfo");
+                            profile = document.querySelector(".uploadImg");
+
+                            content = "";
+
+                            contentProf = "";
+                            contentNameEdit = "";
+                            contentUserInfo = "";
+
+                            if(retorno.logged == "false"){
+                                
+
+                                location.href = "../Login/Login.html";
+
+                            }
+                            else{
+
+                                for(i = 0; i < retorno.length; i++){
+
+                                    //header
+
+                                    content += '<div class="headerProf">';
+                                    if(retorno[i].profile_image){
+                                        content += '<a href="../Profile/profile.html" id="headImg"><image src="../uploads/' + retorno[i].profile_image + '" width="40" height="40"></image></a>';
+                                    }
+                                    else{
+                                        content += '<a href="../Profile/profile.html" id="headImg"><image src="../home/img/iconBig.png" width="40" height="40"></image></a>';
+                                    }
+                                    
+                                    content += '<a id="userHeader" href="../Profile/profile.html">' + retorno[i].username + '<i id="arrDownIcon" class="fa-solid fa-angle-down"></i></a>';
+                                    content += '<a id="headMoney" href="../Cash/cash.html">R$ ' + retorno[i].cash + '</a>';
+                                    content += '<a id="logout" onclick="logout()">Sair</a>';
+                                    content += '</div>'
+
+                                    //DIV nameEdit
+
+                                    if(retorno[i].profile_image){
+                                        contentNameEdit += '<img id="editAvtr" src="../uploads/' + retorno[i].profile_image + '" />'; 
+                                    }
+                                    else{
+                                        contentNameEdit += '<img id="editAvtr" src="../Home/img/iconBig.png" />'; 
+                                    }
+                                    
+                                    contentNameEdit += '<span id="editUser">' + retorno[i].username + '</span>'; 
+
+
+                                    //DIV userInfo
+
+                                    contentUserInfo += '<p><span id="countrySp">País</span></p>';
+
+                                    if(retorno[i].country){
+                                        contentUserInfo += '<input type="text" name="country" value="' + retorno[i].country + '" />';
+                                    }
+                                    else{
+                                        contentUserInfo += '<input type="text" name="country" />';
+                                    }
+                                    
+                                    contentUserInfo += '<p><span id="stateSP">Estado</span></p>';
+
+                                    if(retorno[i].state){
+                                        contentUserInfo += '<input type="text" name="state" value="' + retorno[i].state + '" />';
+                                    }
+                                    else{
+                                        contentUserInfo += '<input type="text" name="state" />';
+                                    }
+                                    
+                                    contentUserInfo += '<p><span id="aboutSp">Sobre você</span></p>';
+
+                                    if(retorno[i].about){
+                                        contentUserInfo += '<textarea id="about" type="text" name="about">' + retorno[i].about + '</textarea>';
+                                    }
+                                    else{
+                                        contentUserInfo += '<textarea id="about" type="text" name="about"></textarea>';
+                                    }
+                                    
+
+                                    
+                                    //DIV uploadImg
+
+                                    contentProf += '<h4>Alterar avatar</h4>';
+
+                                    if(retorno[i].profile_image){
+                                        contentProf += '<p><img id="avMed" src="../uploads/' + retorno[i].profile_image + '" /></p>';
+                                    }
+                                    else{
+                                        contentProf += '<p><img id="avMed" src="../Home/img/iconBig.png" /></p>';
+                                    }
+                                    
+                                    contentProf += '<span id="sizeSp">Tamanho recomendado: 150x150</span>';
+                                    contentProf += '<label for="upFrm">Selecionar arquivo</label>';
+                                    contentProf += '<p><input id="upFrm" type="file" name="image" accept="image/*" /></p>';
+                                    contentProf += '<span id="file-name"></span>';
+                                    contentProf += '<div class="submitBtns">';
+                                    contentProf += '<a href="../Profile/profile.html" class="cancel">Cancelar</a> ';
+                                    contentProf += '<input type="button" class="upBtn" value="Salvar" onclick="upload()" /> ';
+                                    contentProf += '</div>';
+                                    
+
+                                }
+
+                                header.innerHTML += content;
+
+                                nameEdit.innerHTML += contentNameEdit;
+                                userInfo.innerHTML += contentUserInfo;
+
+                                profile.innerHTML += contentProf;
+                            }
+
+                            c = document.querySelector('#headMoney');
+                            moneyText = c.innerHTML;
+                            moneyText = moneyText.replace('.', ',');
+                            c.text = moneyText;
+
+                            upFrm.onchange = evt => {
+                                const [file] = upFrm.files
+                                if (file) {
+                                    avMed.src = URL.createObjectURL(file)
+                                }
+                            }
+
+
+                            var $input    = document.getElementById('upFrm'),
+                                $fileName = document.getElementById('file-name');
+
+                            //var name = $input.replace(/^.*\\/, "");
+
+                            $input.addEventListener('change', function(){
+                                $fileName.textContent = this.value.replace("C:\\fakepath\\", "");
+                            });
+                        },
+                        error: function(err){
+                            console.log(err);
+                            
+                        }
+                        
+                });
+            }
+
+            
+            function logout(){
+                $.ajax({
+                        type: "GET",
+                        dataType: "json",
+                        //data: data,
+                        url: "../logout.php", 
+                        success: function(retorno){
+                            console.log(retorno);
+
+                            if(retorno.logged == "false"){
+                                location.href = "../index.html";
+                            }
+                        
+                        },
+                        error: function(err){
+                            console.log(err);
+                            
+                        }
+                        
+                });
+            }
+
+            
+
+        </script>
+
+    </body>
+
+
+</html>

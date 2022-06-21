@@ -6,6 +6,7 @@ require '../PHPMailer-master/src/Exception.php';
 require '../PHPMailer-master/src/PHPMailer.php';
 require '../PHPMailer-master/src/SMTP.php';
 
+
 $mail = new PHPMailer();
 
     $mail->IsSMTP();
@@ -14,24 +15,69 @@ $mail = new PHPMailer();
 $mail->CharSet = 'UTF-8';   
 $mail->SMTPDebug = 0;
 $mail->SMTPAuth = true;     
-$mail->SMTPSecure = 'ssl'; 
-$mail->Host = 'smtp.gmail.com'; 
-$mail->Port = 465;
+$mail->SMTPSecure = 'tls'; 
+$mail->Host = 'smtp-mail.outlook.com'; 
+$mail->Port = 587;
 
 
-
-$user = $_POST['username'];
+/*$user = $_POST['username'];
 $pass = MD5($_POST['password']);
-$email = $_POST['email'];
+$email = $_POST['email'];*/
+
+//print_r($_POST);
+
+$message = $_POST['message'];
+
+$iv = substr($message,0, 16);
+$crypt = substr($message,16);
+
+
+
+$key = '1564196849685165';
+//$iv = '4164149658496541';
+
+$decrypt = openssl_decrypt($crypt, 'aes-128-cbc', $key,  OPENSSL_ZERO_PADDING, $iv);
+
+//echo $decrypt;
+
+$decrypt = "[" . trim($decrypt) . "]";
+
+//echo $decrypt;
+
+
+$json = json_decode($decrypt, true);
+
+//var_dump($json);
+
+$user =  $json[0]['user'];
+$pass =  $json[0]['pass'];
+$email =  $json[0]['email'];
+
+
 $connect = mysqli_connect('localhost','root','', 'ghost');
 $query_select = "SELECT username FROM accounts WHERE username = '$user'";
 $select = mysqli_query($connect,$query_select);
 $array = mysqli_fetch_array($select);
-$logarray = $array['username'];
 
-$mail->Username = 'ghostsoftcompany@gmail.com'; 
-$mail->Password = 'ghostcompany';
-$mail->SetFrom('ghostsoftcompany@gmail.com', 'Ghost Software');
+if(isset($array)){
+  $logarray = $array['username'];
+}
+else{
+  $logarray = null;
+}
+
+
+$mail->Username = 'ghostsoftware@outlook.pt'; 
+$mail->Password = 'ghostcompany1';
+$mail->SetFrom('ghostsoftware@outlook.pt', 'Ghost Software');
+// For most clients expecting the Priority header:
+// 1 = High, 2 = Medium, 3 = Low
+$mail->Priority = 1;
+// MS Outlook custom header
+// May set to "Urgent" or "Highest" rather than "High"
+$mail->AddCustomHeader("X-MSMail-Priority: High");
+// Not sure if Priority will also set the Importance header:
+$mail->AddCustomHeader("Importance: High");
 
 
   if($user == "" || $user == null){
@@ -39,14 +85,14 @@ $mail->SetFrom('ghostsoftcompany@gmail.com', 'Ghost Software');
     alert('O campo login deve ser preenchido');window.location.href='
     cadastro.html';</script>";
 
-    }else{
+    }
+    else{
       if($logarray == $user){
 
-        echo"<script>
-          alert('Esse login já existe');window.location.href='
-          signUp.html';
-        </script>";
-        die();
+        $obj["status"] = "nao";
+        $obj["message"] = "aaaaa";
+
+        echo json_encode($obj);
 
       }else{
         $query = "INSERT INTO accounts (username, password, email) VALUES ('$user','$pass', '$email')";
@@ -59,21 +105,16 @@ $mail->SetFrom('ghostsoftcompany@gmail.com', 'Ghost Software');
           if($mail->send()){
             //echo"bala";
 
-            echo"<script>
-            //alert('Usuário cadastrado com sucesso!');
-            window.location.href='../index.php'
-          </script>";
+            $obj["status"] = "sent";
+            echo json_encode($obj);
           }
           else{
-            echo"aff";
+            
           }
 
           /**/
         }else{
-          echo"<script>
-            //alert('Não foi possível cadastrar esse usuário');
-            window.location.href='signUp.php'
-          </script>";
+          echo json_encode("outro");
         }
       }
     }

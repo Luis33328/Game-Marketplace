@@ -1,0 +1,405 @@
+@font-face{
+    font-family: big;
+    src: url('../../assets/fonts/BigPixel.ttf');
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: big;
+}
+
+body{
+    
+    background: linear-gradient(to bottom,#240b3c 0.5%, #1E1E1E 100%);
+    
+    
+    
+}
+
+
+
+/*Footer*/
+
+.footer{
+    width: 100%;
+    height: 30px;
+    height: 100px;
+    margin-top: 50px;
+    background-color: #10041b;
+
+}
+
+
+
+#rights{
+    display: inline-block;
+    margin-left: 11%;
+    padding-top: 20px;
+    word-wrap: break-word;
+    max-width: 850px;
+    font-size: 11px;
+    color: rgb(179, 179, 179);
+}
+
+.navFooter{
+    font-size: 12px;
+    margin-left: 11%;
+    margin-top: 20px;
+}
+
+.navFooter a {
+    margin-right: 20px;
+    color: rgb(155, 155, 155);
+    text-decoration: none;
+    transition: .3s;
+}
+
+.navFooter a:hover{
+    color: rgb(194, 194, 194);
+}
+
+.container{
+    color: rgb(189, 189, 189);
+}
+
+/*Header*/
+
+.header{
+    width:100%;
+    height: 100px;
+    background-color: #160625;
+    
+}
+
+.nav{
+    margin-left: 130px;
+    padding-top: 35px;
+}
+
+.nav a{
+    display: inline-block;
+    font-size: 16px;
+    text-decoration: none;
+    color: rgb(218, 218, 218);
+    margin-left: 30px;
+    border: 2px transparent;
+    transition: .3s;
+}
+
+.nav a:hover{
+    border-bottom: 2px solid ;
+    color: #7e2ab6;
+    cursor: pointer;
+    text-shadow: /*0 0 0.2em hsl(0 0% 100% / 0.5),*/ 0 0 1em #7e2ab6;
+
+    /*box-shadow: 0 10px 1em -0.3em #7e2ab6;*/
+}
+
+#ghostLogo{
+    width: 125px;
+    height: 76px;
+    /*fill: linear-gradient(101.9deg, #6477DD 7.67%, #C753C1 52.66%, #DC1DC3 93.7%);*/
+    margin-top: 6px;
+
+}
+
+#heartIcon{
+    display: inline-block;
+    font-size: 16px;
+    color: rgb(218, 218, 218);
+    margin-left: 60px;
+    transition: .3s;
+}
+
+#heartIcon:hover{
+    color: #7e2ab6;
+    text-shadow:  0 0 1em #7e2ab6;
+    cursor: pointer;
+}
+
+#heartText{
+    display: inline-block;
+    margin-left: 10px;  
+}
+
+#cartIcon{
+    display: inline-block;
+    font-size: 16px;
+    color: rgb(218, 218, 218);
+    margin-left: 40px;
+    transition: .3s;
+}
+
+#cartIcon:hover{
+    color: #7e2ab6;
+    text-shadow:  0 0 1em #7e2ab6;
+    cursor: pointer;
+}
+
+
+.headContent{
+    display: flex;
+    margin-left: 8%;
+}
+
+.headerProf{
+    margin-left: 130px;
+    /*margin-left: 130px;*/
+    padding-top: 23px;
+}
+
+.headerProf a{
+    display: inline-block;
+    text-decoration: none;
+}
+
+#headImg{
+    border: 1px solid rgb(143, 143, 143); 
+    transition: .7s;
+}
+
+#headImg:hover{
+    border: 1px solid #915bc7; 
+}
+
+#userHeader{
+    color: rgb(189, 189, 189);
+    margin-left: 4px;
+    position: relative;
+    top: -25px;
+    transition: .4s;
+}
+
+#userHeader:hover{
+    color: #7e2ab6;
+    cursor: pointer;
+    text-shadow: 0 0 1em #7e2ab6;
+}
+
+#arrDownIcon{
+    font-size: 14px;
+    margin-left: 2px;
+}
+
+#headMoney{
+    display: block;
+    position: relative;
+    font-size: 11px;
+    left: 48px;
+    top: -15px;
+    color: rgb(163, 163, 163);
+    transition: .4s;
+}
+
+#headMoney:hover{
+    color: rgb(189, 189, 189);
+}
+
+#logout{
+    display: block;
+    position: relative;
+    color: rgb(163, 163, 163);
+    font-size: 10px;
+    left: 115px;
+    top: -29px;
+    transition: .4s;
+}
+
+#logout:hover{
+    cursor: pointer;
+    color: rgb(189, 189, 189);
+}
+
+.loginButtonH a{
+    display: inline-block;
+    text-decoration: none;
+    font-size: 14px;
+    border: 0px;
+    background: linear-gradient(101.9deg, #7273D9 7.67%, #B35BC7 52.66%, #D927C3 93.7%);
+    border-radius: 8px;
+    color: rgb(218, 218, 218);
+    width: 140px;
+    height: 40px;
+    text-align: center;
+    padding-top: 11px;
+    margin-left: 170px;
+    margin-top: 27px;
+    transition: .3s;
+}
+
+.loginButtonH a:hover{
+    text-shadow:  0 0 1em #7e2ab6;
+    box-shadow:  0 0 0.5em #7e2ab6;
+    color: rgb(235, 235, 235);
+}
+
+
+/*Cash*/
+
+#cash{
+    display: block;
+    text-decoration: none;
+    font-size: 12px;
+    color: #C6C6C6;
+    margin-top: 10px;
+    transition: .2s;
+}
+
+#cash:hover{
+    color: #e0e0e0;
+}   
+
+.cashTop span{
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 300;
+    color: #C6C6C6;
+    margin-left:10%;
+    margin-top: 50px;
+    padding-left: 20px;
+}
+
+.cashPrices{
+    margin-left: 11%;
+    margin-top : 30px;
+    padding-bottom: 95px;
+}
+
+.cred1{
+    width: 600px;
+    height: 90px;
+    background-color: #293446;
+    /*background-color: #363636;*/
+    border-radius: 10px;
+    
+}
+
+.cred2{
+    width: 600px;
+    height: 90px;
+    background-color: #293446;
+    /*background-color: #363636;*/
+    margin-top: 20px;
+    border-radius: 10px;
+    
+}
+
+.cred1 span, .cred2 span{
+    display: inline-block;
+    margin-left: 30px;
+    margin-top: 32px;
+    color: #cfcfcf;
+    font-size: 22px;
+}
+
+#buyCredits1{
+    display: inline-block;
+    text-decoration: none;
+    margin-left: 38px;
+    position: relative;
+    top: -3px;
+    width: 130px;
+    height: 35px;
+    background: linear-gradient(101.9deg, #7273D9 7.67%, #B35BC7 52.66%, #D927C3 93.7%);
+    color: rgb(218, 218, 218);
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    padding-top: 9px;
+    font-size: 14px;
+    transition: .3s;
+}
+
+#buyCredits2{
+    display: inline-block;
+    text-decoration: none;
+    margin-left: 23px;
+    position: relative;
+    top: -3px;
+    width: 130px;
+    height: 35px;
+    background: linear-gradient(101.9deg, #7273D9 7.67%, #B35BC7 52.66%, #D927C3 93.7%);
+    color: rgb(218, 218, 218);
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    padding-top: 9px;
+    font-size: 14px;
+    transition: .3s;
+}
+
+#buyCredits3{
+    display: inline-block;
+    text-decoration: none;
+    margin-left: 23px;
+    position: relative;
+    top: -3px;
+    width: 130px;
+    height: 35px;
+    background: linear-gradient(101.9deg, #7273D9 7.67%, #B35BC7 52.66%, #D927C3 93.7%);
+    color: rgb(218, 218, 218);
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    padding-top: 9px;
+    font-size: 14px;
+    transition: .3s;
+}
+
+#buyCredits1:hover, #buyCredits2:hover, #buyCredits3:hover{
+    color: rgb(231, 231, 231);
+    cursor: pointer;
+}
+
+#cashPrice1, #cashPrice2, #cashPrice3 , #cashPrice4, #cashPrice5 {
+    display: inline-block;
+    position: relative;
+    top: -2px;
+    width: 90px;
+    height: 28px;
+    margin-left: -3px;
+    border-radius: 8px;
+    background-color: #7754ac;
+    padding-top: 6px;
+    color: rgb(218, 218, 218);
+    font-size: 14px;
+    text-align: center;
+}
+
+.creditMid{
+    display: flex;
+    
+}
+
+.yourCurrency{
+    width: 300px;
+    height: 200px;
+    background-color: #293446;
+    margin-top: 30px;
+    margin-left: 30px;
+    border-radius: 8px;
+}
+
+.yourCurrency span{
+    display: inline-block;
+    font-size: 28px;
+    color: #C6C6C6;
+    margin-left: 43px;
+    margin-top: 30px;
+    
+}
+
+#cashBig{
+    display: block;
+    font-size: 35px;
+    margin-left: 46px;
+    margin-top: 35px;
+    background-color: #7754ac;
+    width: 200px;
+    height: 43px;
+    border-radius: 8px;
+    text-align:center;
+}

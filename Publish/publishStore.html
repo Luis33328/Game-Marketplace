@@ -1,0 +1,413 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Meu Perfil</title>
+
+        <script src="https://kit.fontawesome.com/50d53b2eac.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/style.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="header">
+                <div class="headContent">
+                    <a href="../index.html"><img id="ghostLogo" src="../home/img/logofinal.svg" /> </a>                
+
+                    <div class="nav">
+                        <a href="../index.html">Home</a>
+                        <a href="../Library/library.html">Biblioteca</a>
+                        <a href="../Profile/profile.html">Meu Perfil</a>
+                        <a href="">Sobre</a>
+
+                        <i id="heartIcon" class="fa-regular fa-heart"><span id="heartText">Favoritos</span></i>
+
+                        <i id="cartIcon" class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                        
+                    
+                </div>
+
+            </div>
+
+
+            <form id="pStoreForm">
+
+                    <div class="gameInformation1">
+                        <span class="title"></span>
+
+                        <div class="storeTop">
+                            <div class="storeLeft">
+                                <div class="slideshow-container">
+
+                                    <!-- Full-width images with number and caption text -->
+                                    <div class="mySlides fadeSt">
+                                        <img class="storeImgB" id="dotB1" src="img/store2.png" />
+                        
+                                    </div>
+                        
+                                    <div class="mySlides fadeSt">
+                                        <img class="storeImgB" id="dotB2" src="img/store2.png" />
+                        
+                                    </div>
+                        
+                                    <div class="mySlides fadeSt">
+                                        <img class="storeImgB" id="dotB3" src="img/store2.png" />
+                        
+                                    </div>
+
+                                    <div class="mySlides fadeSt">
+                                        <img class="storeImgB" id="dotB4" src="img/store2.png" />
+                        
+                                    </div>
+                        
+                                    <div class="mySlides fadeSt">
+                                        <img class="storeImgB" id="dotB5" src="img/store2.png" />
+                        
+                                    </div>
+                        
+                                    <!-- Next and previous buttons -->
+                                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                                </div>
+                                <br>
+                        
+                                <!-- The dots/circles -->
+                                <div class="dwnImages">
+                                    
+                                    <label for="dwnImg1"><img src="img/store.png" class="dotP" id="dot1" ></span></label>
+                                    <input type="file" name="dwnImg1" id="dwnImg1" accept="image/*" />
+                                    <label for="dwnImg2"><img src="img/store.png" class="dotP" id="dot2" ></span></label>
+                                    <input type="file" name="dwnImg2" id="dwnImg2" accept="image/*" />
+                                    <label for="dwnImg3"><img src="img/store.png" class="dotP" id="dot3" ></span></label>
+                                    <input type="file" name="dwnImg3" id="dwnImg3" accept="image/*" />
+                                    <label for="dwnImg4"><img src="img/store.png" class="dotP" id="dot4" ></span></label>
+                                    <input type="file" name="dwnImg4" id="dwnImg4" accept="image/*" />
+                                    <label for="dwnImg5"><img src="img/store.png" class="dotP" id="dot5" ></span></label>
+                                    <input type="file" name="dwnImg5" id="dwnImg5" accept="image/*" />
+                                </div>
+                            </div>
+
+                            <div class="storeRight">
+                                
+                                <img id="storeImg2" src="../uploads/" />
+                                <p><textarea id="summaryInp" type="text" name="summary" placeholder="Digite aqui uma breve descrição do jogo"></textarea></p>
+                                <span id="launchDate">Data de Lançamento: <input type="text" id="launchDateInp" name="launchDate" placeholder="Digite a data de lançamento" /></span>
+                                <span id="devName">Developer: <span id="devNameHighlight"></span></span>
+                                <div class="storeTagsPbl">
+                                    <input type="text" name="tag1" autocomplete="off" />
+                                    <input type="text" name="tag2" autocomplete="off" />
+                                    <input type="text" name="tag3" autocomplete="off" />
+                                    <input type="text" name="tag4" autocomplete="off" />
+                                </div>
+                                
+
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="storeMid">
+                        <div class="midLeft">
+                            <div class="gameInformation2">
+                                <div class="gameAbout">
+                                    <h2>SOBRE O JOGO</h2>
+                                    <p><textarea id="furtherArea" type="text" name="further"></textarea></p>
+                                </div>
+
+                            </div>
+
+                            <div class="buyGame">
+                                <span id="buyName">Comprar Jogo</span>
+                                <a href="">Comprar Agora</a>
+                                <span id="storePrice">R$ <input type="text" name="storePriceInp" id="storePriceInp" autocomplete="off" />   </span>   
+                                           
+                            </div>
+                        </div>
+
+                        <div class="reviews">
+                            <h2>ANÁLISES</h2>
+                        </div>
+
+                    </div>
+
+                    <input type="button" onclick="upload()" id="submitStore" value="Salvar" />
+                
+            </form>
+        </div>
+
+        <div class="footer">
+            <div class="footInf">
+                <span id="rights">
+                    © 2022 . Todos os direitos reservados. Todas as marcas comerciais são propriedade dos respectivos proprietários nos E.U.A. e outros países.
+            IVA incluído em todos os preços onde aplicável.
+                </span>
+            </div>
+            
+            <div class="navFooter">
+                <a href="">Sobre a empresa</a>
+                <a href="">Trabalhe conosco</a>
+                <a href="">Vale Presentes</a>
+                <a href="">Política de privacidade</a>
+            </div>
+        </div>
+
+
+        <script>
+
+        $(document).ready(function(){
+
+        validSession();
+        getGame();
+
+        });
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dotP");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" activeSt", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " activeSt";
+        }
+
+        dwnImg1.onchange = evt => {
+            const [file] = dwnImg1.files
+            if (file) {
+                dot1.src = URL.createObjectURL(file);
+                dotB1.src = URL.createObjectURL(file);
+            }
+        }
+
+        dwnImg2.onchange = evt => {
+            const [file] = dwnImg2.files
+            if (file) {
+                dot2.src = URL.createObjectURL(file);
+                dotB2.src = URL.createObjectURL(file);
+            }
+        }
+
+        dwnImg3.onchange = evt => {
+            const [file] = dwnImg3.files
+            if (file) {
+                dot3.src = URL.createObjectURL(file);
+                dotB3.src = URL.createObjectURL(file);
+            }
+        }
+
+        dwnImg4.onchange = evt => {
+            const [file] = dwnImg4.files
+            if (file) {
+                dot4.src = URL.createObjectURL(file);
+                dotB4.src = URL.createObjectURL(file);
+            }
+        }
+
+        dwnImg5.onchange = evt => {
+            const [file] = dwnImg5.files
+            if (file) {
+                dot5.src = URL.createObjectURL(file);
+                dotB5.src = URL.createObjectURL(file);
+            }
+        }
+            
+
+            
+
+
+            function getGame (){
+                $.ajax({
+                        type: "GET",
+                        dataType: "json",
+                        //data: data,
+                        url: "getName.php", 
+                        success: function(retorno){
+                            console.log(retorno);
+                            title = document.querySelector(".title");
+                            storeImg2 = document.getElementById("storeImg2");
+                            devNameHighlight = document.getElementById("devNameHighlight");
+
+                            content = "";
+                            contentImg = "";
+                            contentDev = "";
+
+
+                            for(i = 0; i < retorno.length; i++){
+                                    content += retorno[i].title;
+                                    contentImg += retorno[i].image;
+                                    contentDev += retorno[i].developer;
+                            }
+
+                            title.innerHTML += content;
+                            storeImg2.src += contentImg;
+                            devNameHighlight.innerHTML += contentDev;
+
+                        
+                        },
+                        error: function(err){
+                            console.log(err);
+                            
+                        }
+                        
+                });
+            
+            }
+
+
+            function upload(){
+
+                var data = $("#pStoreForm").serialize();
+
+                var frm = $('#pStoreForm');
+                var formData = new FormData(frm[0]);
+                formData.append('title', document.querySelector(".title").innerHTML);
+                formData.append('image1', document.getElementById("dwnImg1").files[0]);
+                formData.append('image2', document.getElementById("dwnImg2").files[0]);
+                formData.append('image3', document.getElementById("dwnImg3").files[0]);
+                formData.append('image4', document.getElementById("dwnImg4").files[0]);
+                formData.append('image5', document.getElementById("dwnImg5").files[0]);
+                
+                //alert(document.getElementById("gameImage").files[0]);
+                //formData.append('gameFile', $('input[type=file]')[1].files[0]);
+                //alert(formData.get(0));
+
+                //alert(formData);
+
+                $.ajax({
+                    type: "POST",
+                    enctype: 'multipart/form-data',
+                    dataType: "json",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    url: "publishStore.php", 
+                    success: function(retorno){
+                        console.log(retorno);
+                        if(retorno.status == "sent"){
+                            location.href = "publishLibrary.html";
+                            
+                        }
+                        else{
+                            alert("Ocorreu um erro ao finalizar a página da loja.");
+                        }
+                    },
+                    error: function(err){
+                        console.log(err);
+                    }
+                    
+                }); 
+                }
+
+            
+
+            function validSession(){
+
+                $.ajax({
+                        type: "GET",
+                        dataType: "json",
+                        //data: data,
+                        url: "../validSession.php", 
+                        success: function(retorno){
+                            console.log(retorno);
+                            header = document.querySelector(".headContent");
+                            profile = document.querySelector(".content");
+
+                            content = "";
+
+                            contentProf = "";
+
+                            if(retorno.logged == "false"){
+                                
+
+                                location.href = "../Login/Login.html";
+
+                            }
+                            else{
+
+                                for(i = 0; i < retorno.length; i++){
+                                    content += '<div class="headerProf">';
+                                    if(retorno[i].profile_image){
+                                        content += '<a href="profile.html" id="headImg"><image src="../uploads/' + retorno[i].profile_image + '" width="40" height="40"></image></a>';
+                                    }
+                                    else{
+                                        content += '<a href="profile.html" id="headImg"><image src="../home/img/iconBig.png" width="40" height="40"></image></a>';
+                                    }
+                                    
+                                    content += '<a id="userHeader" href="profile.html">' + retorno[i].username + '<i id="arrDownIcon" class="fa-solid fa-angle-down"></i></a>';
+                                    content += '<a id="headMoney" href="../Cash/cash.html">R$ ' + retorno[i].cash + '</a>';
+                                    content += '<a id="logout" onclick="logout()">Sair</a>';
+                                    content += '</div>'
+
+                                }
+
+                                header.innerHTML += content;
+
+                            }
+                        },
+                        error: function(err){
+                            console.log(err);
+                            
+                        }
+                        
+                });
+            }
+
+            function logout(){
+                $.ajax({
+                        type: "GET",
+                        dataType: "json",
+                        //data: data,
+                        url: "../logout.php", 
+                        success: function(retorno){
+                            console.log(retorno);
+
+                            if(retorno.logged == "false"){
+                                location.href = "../index.html";
+                            }
+                        
+                        },
+                        error: function(err){
+                            console.log(err);
+                            
+                        }
+                        
+                });
+            }
+
+        </script>
+    </body>
+</html>

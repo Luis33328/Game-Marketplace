@@ -1,0 +1,1140 @@
+/*Playstation Font*/
+
+@font-face{
+    font-family: ps1;
+    src: url('../../assets/fonts/zrnic.ttf');
+}
+
+/*Retro Font*/
+
+@font-face{
+    font-family: retro;
+    src: url('../../assets/fonts/Retro.ttf');
+}
+
+@font-face{
+    font-family: big;
+    src: url('../../assets/fonts/BigPixel.ttf');
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: big;
+}
+
+body{
+    
+    background: linear-gradient(to bottom,#240b3c 0.5%, #1E1E1E 100%);
+    
+    
+    
+}
+
+
+
+/*Footer*/
+
+.footer{
+    width: 100%;
+    height: 30px;
+    height: 100px;
+    margin-top: 50px;
+    background-color: #10041b;
+
+}
+
+
+
+#rights{
+    display: inline-block;
+    margin-left: 11%;
+    padding-top: 20px;
+    word-wrap: break-word;
+    max-width: 850px;
+    font-size: 11px;
+    color: rgb(179, 179, 179);
+}
+
+.navFooter{
+    font-size: 12px;
+    margin-left: 11%;
+    margin-top: 20px;
+}
+
+.navFooter a {
+    margin-right: 20px;
+    color: rgb(155, 155, 155);
+    text-decoration: none;
+    transition: .3s;
+}
+
+.navFooter a:hover{
+    color: rgb(194, 194, 194);
+}
+
+.container{
+    color: rgb(189, 189, 189);
+}
+
+/*Header*/
+
+.header{
+    width:100%;
+    height: 100px;
+    background-color: #160625;
+    
+}
+
+.nav{
+    margin-left: 130px;
+    padding-top: 35px;
+}
+
+.nav a{
+    display: inline-block;
+    font-size: 16px;
+    text-decoration: none;
+    color: rgb(218, 218, 218);
+    margin-left: 30px;
+    border: 2px transparent;
+    transition: .3s;
+}
+
+.nav a:hover{
+    border-bottom: 2px solid ;
+    color: #7e2ab6;
+    cursor: pointer;
+    text-shadow: /*0 0 0.2em hsl(0 0% 100% / 0.5),*/ 0 0 1em #7e2ab6;
+
+    /*box-shadow: 0 10px 1em -0.3em #7e2ab6;*/
+}
+
+#ghostLogo{
+    width: 125px;
+    height: 76px;
+    /*fill: linear-gradient(101.9deg, #6477DD 7.67%, #C753C1 52.66%, #DC1DC3 93.7%);*/
+    margin-top: 6px;
+
+}
+
+#heartIcon{
+    display: inline-block;
+    font-size: 16px;
+    color: rgb(218, 218, 218);
+    margin-left: 60px;
+    transition: .3s;
+}
+
+#heartIcon:hover{
+    color: #7e2ab6;
+    text-shadow:  0 0 1em #7e2ab6;
+    cursor: pointer;
+}
+
+#heartText{
+    display: inline-block;
+    margin-left: 10px;  
+}
+
+#cartIcon{
+    display: inline-block;
+    font-size: 16px;
+    color: rgb(218, 218, 218);
+    margin-left: 40px;
+    transition: .3s;
+}
+
+#cartIcon:hover{
+    color: #7e2ab6;
+    text-shadow:  0 0 1em #7e2ab6;
+    cursor: pointer;
+}
+
+
+.headContent{
+    display: flex;
+    margin-left: 8%;
+}
+
+.headerProf{
+    margin-left: 130px;
+    /*margin-left: 130px;*/
+    padding-top: 23px;
+}
+
+.headerProf a{
+    display: inline-block;
+    text-decoration: none;
+}
+
+#headImg{
+    border: 1px solid rgb(143, 143, 143); 
+    transition: .7s;
+}
+
+#headImg:hover{
+    border: 1px solid #915bc7; 
+}
+
+#userHeader{
+    color: rgb(189, 189, 189);
+    margin-left: 4px;
+    position: relative;
+    top: -25px;
+    transition: .4s;
+}
+
+#userHeader:hover{
+    color: #7e2ab6;
+    cursor: pointer;
+    text-shadow: 0 0 1em #7e2ab6;
+}
+
+#arrDownIcon{
+    font-size: 14px;
+    margin-left: 2px;
+}
+
+#headMoney{
+    display: block;
+    position: relative;
+    font-size: 11px;
+    left: 48px;
+    top: -15px;
+    color: rgb(163, 163, 163);
+    transition: .4s;
+}
+
+#headMoney:hover{
+    color: rgb(189, 189, 189);
+}
+
+#logout{
+    display: block;
+    position: relative;
+    color: rgb(163, 163, 163);
+    font-size: 10px;
+    left: 115px;
+    top: -29px;
+    transition: .4s;
+}
+
+#logout:hover{
+    cursor: pointer;
+    color: rgb(189, 189, 189);
+}
+
+.loginButtonH a{
+    display: inline-block;
+    text-decoration: none;
+    font-size: 14px;
+    border: 0px;
+    background: linear-gradient(101.9deg, #7273D9 7.67%, #B35BC7 52.66%, #D927C3 93.7%);
+    border-radius: 8px;
+    color: rgb(218, 218, 218);
+    width: 140px;
+    height: 40px;
+    text-align: center;
+    padding-top: 11px;
+    margin-left: 170px;
+    margin-top: 27px;
+    transition: .3s;
+}
+
+.loginButtonH a:hover{
+    text-shadow:  0 0 1em #7e2ab6;
+    box-shadow:  0 0 0.5em #7e2ab6;
+    color: rgb(235, 235, 235);
+}
+
+
+/*Publish*/
+
+.publishBack{
+    width: 800px;
+    min-height: 1000px;
+    /*background: linear-gradient(to bottom, #363636 2%, #20252c 30%);
+    background: linear-gradient(180deg, #2b333a -3.38%, #1D1E20 78.58%);*/
+    /*background: linear-gradient(180deg, #363636 -3.38%, #1D1E20 78.58%);*/
+    margin: auto;
+    background: linear-gradient(to bottom,  #1c1435 3%, #170927 90%);  
+    border: 1px solid #ffffff1b;
+}
+
+.publishBack span{
+    display: block;
+}
+
+.publishInf{
+    margin-left: 50px;
+}
+
+.pblSp{
+    margin-left: 50px;
+    margin-bottom: 20px;
+    width: 220px;
+    font-size: 20px;
+    border-bottom: 2px solid #535353;
+    line-height: 3em;
+}
+
+.publishBack input[type="text"]{
+    color: rgb(185, 185, 185);
+    width: 400px;
+    height: 35px;
+    outline: none;
+    border: solid 1px #373a41;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    margin-top: 8px;
+    padding: 8px;
+    background-color: #292929;
+    transition: 0.4s;
+}
+
+
+#storeImg {
+    width: 460px;
+    height: 215px;
+    text-decoration: none;
+    margin-left: 100px;
+    margin-top: 35px;
+    border-radius: 8px;
+    border: solid 3px #6248AF;
+}
+
+.publishBack input[type='file'] {
+    display: none;
+}
+  
+.publishBack label {
+    width: 240px;
+    display: block;
+    background-color: #3498db;
+    border-radius: 5px;
+    color: #fff;
+    margin-left: 210px;
+    padding: 6px 20px;
+    transition: .3s;
+}
+  
+.publishBack label:hover {
+    background-color: #2980b9;
+    cursor: pointer;
+}
+
+#sizeSp2{
+    font-size: 15px;
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 185px;
+    color: rgb(180, 180, 180);
+    
+}
+
+#sizeSp3{
+    font-size: 15px;
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 135px;
+    color: rgb(180, 180, 180);
+    
+}
+
+#file-name2 {
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 210px;
+    position: absolute;
+}
+
+#file-name3 {
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 210px;
+    position: absolute;
+}
+
+#pblFile{
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+
+.publishBtn{
+    width: 160px;
+    height: 28px;
+    background: linear-gradient(101.9deg, #7273D9 7.67%, #B35BC7 52.66%, #D927C3 93.7%);
+    color: rgb(223, 223, 223);
+    border-radius: 8px;
+    border: 0px;
+    margin-left: 510px;
+    margin-top: 100px;
+    transition: .3s;
+}
+
+.publishBtn:hover{
+    color: rgb(235, 235, 235);
+    cursor: pointer;
+}
+
+
+
+/*Publish Store*/
+
+#pStoreForm{
+    margin-left: 9%;
+}
+
+.gameInformation1{
+width: 1210px;
+height: 600px;
+background-color: #2D2D2D;
+}
+
+.title{
+display: block;
+font-size: 24px;
+color: rgb(218, 218, 218);
+margin-left: 30px;
+padding-top: 30px;
+}
+
+.storeImgB{
+width: 600px;
+height: 337px;
+margin-top: 20px;
+margin-left: 30px;
+}
+
+/* Carousel */
+
+.slideshow-container {
+max-width: 1000px;
+}
+
+/* Hide the images by default */
+.mySlides {
+display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+cursor: pointer;
+position: absolute;
+top: 650px;
+width: 50px;
+height: 30px;
+margin-top: -22px;
+margin-left: 30px;
+padding-left: 19px;
+padding-top: 2px;
+color: white;
+font-weight: bold;
+font-size: 18px;
+transition: 0.6s ease;
+border-radius: 8px;
+user-select: none;
+background-color: #7754ac;
+}
+
+/* Position the "next button" to the right */
+.next {
+margin-left: 580px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+background-color: rgb(111, 71, 233);
+}
+
+
+.dwnImages{
+margin-left: 30px;
+
+}
+
+.dwnImages img{
+    margin-right: -6px;
+}
+
+.dot {
+cursor: pointer;
+height: 65px;
+width: 116px;
+margin: 0 0.3px;
+background-color: #bbb;
+display: inline-block;
+
+transition: border 0.1s ease;
+}
+
+.activeSt,
+.dot:hover {
+background-color: #717171;
+border: 2px solid white;
+}
+
+/* Fading animation */
+.fadeSt {
+-webkit-animation-name: fadeSt;
+-webkit-animation-duration: 1.5s;
+animation-name: fadeSt;
+animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fadeSt {
+from {
+    opacity: .2
+}
+
+to {
+    opacity: 1
+}
+}
+
+@keyframes fadeSt {
+from {
+    opacity: .2
+}
+
+to {
+    opacity: 1
+}
+}
+
+.storeTop{
+display: flex;
+}
+
+.storeRight{
+display: block;
+}
+
+#storeImg2 {
+width: 460px;
+height: 215px;
+margin-left: 60px;
+margin-top: 20px;
+
+}
+
+#gameSummary{
+display: inline-block;
+margin-left: 60px;
+margin-top: 20px;
+word-wrap: break-word;
+max-width: 460px;
+font-size: 15px;
+color: rgb(196, 196, 196);
+}
+
+
+#launchDate{
+display: block;
+margin-left: 60px;
+margin-top: 30px;
+color: rgb(136, 136, 136);
+
+}
+
+#devName{
+display: block;
+margin-left: 60px;
+margin-top: 30px;
+color: rgb(128, 128, 128);
+}
+
+#devNameHighlight{
+color: #9967f5;
+}
+
+.storeTags{
+margin-left: 60px;
+margin-top: 45px;
+}
+
+.storeTags span{
+display: inline-block;
+text-align: center;
+padding: 3px;
+min-width: 100px;
+height: 25px;
+margin-right: 5px;
+border-radius: 10px;
+background-color: #4E349E;
+color: rgb(177, 177, 177);
+font-size:15px;
+}
+
+
+.gameInformation2{
+width: 850px;
+height: 400px;
+margin-top: 50px;
+background-color: #2D2D2D;
+}
+
+.gameAbout h2{
+display: inline-block;
+font-size: 15px;
+color: rgb(218, 218, 218);
+margin-left: 30px;
+margin-top: 30px;
+}
+
+#furtherDetails{
+display: inline-block;
+margin-left: 30px;
+margin-top: 30px;
+word-wrap: break-word;
+max-width: 650px;
+font-size: 15px;
+color: rgb(179, 179, 179);
+}
+
+
+.buyGame{
+width: 850px;
+height: 100px;
+margin-top: 30px;
+background-color: #2D2D2D;
+border-radius: 10px;
+}
+
+#buyName{
+display: inline-block;
+font-size: 24px;
+color: rgb(218, 218, 218);
+margin-left: 30px;
+margin-top: 33px;
+}
+
+.buyGame a{
+display: inline-block;
+margin-left: 300px;
+margin-top: 20px;
+width: 175px;
+height: 38px;
+background: linear-gradient(101.9deg, #7273D9 7.67%, #B35BC7 52.66%, #D927C3 93.7%);
+color: rgb(218, 218, 218);
+text-decoration: none;
+border-radius: 8px;
+text-indent: 17px;
+padding-top: 9px;
+transition: .3s;
+}
+
+.buyGame a:hover{
+color: rgb(233, 232, 232);
+}
+
+#storePrice{
+display: inline-block;
+position: relative;
+top: 28px;
+width: 100px;
+height: 30px;
+border-radius: 8px;
+background-color: #7754ac;
+padding-top: 5px;
+color: rgb(218, 218, 218);
+text-indent: 14px;
+}
+
+.storeMid{
+display: flex;
+}
+
+.reviews{
+width: 345px;
+height: 530px;
+margin-top: 50px;
+background-color: #2D2D2D;
+margin-left: 15px;
+border-radius: 8px;
+}
+
+.reviews h2{
+display: inline-block;
+font-size: 15px;
+color: rgb(218, 218, 218);
+margin-left: 30px;
+margin-top: 26px;
+
+}
+
+.other{
+width: 850px;
+height: 270px;
+background-color: #2D2D2D;
+margin-left: 25px;
+margin-top: 50px;
+margin-bottom: 40px;
+border-radius: 8px;
+}
+
+.other h2{
+display: inline-block;
+font-size: 16px;
+color: rgb(218, 218, 218);
+margin-left: 30px;
+margin-top: 26px;
+
+}
+
+.og1, .og2, .og3{
+display: inline-block;
+width: 240px;
+height: 180px;
+background-color:#252525;
+margin-left: 30px;
+margin-top: 20px;
+text-decoration: none;
+border-radius: 8px;
+border: 2px solid transparent;
+transition: .3s;
+}
+
+.og1:hover, .og2:hover, .og3:hover{
+border: 2px solid rgb(206, 206, 206);
+}
+
+.og1 span, .og2 span, .og3 span{
+display: block;
+font-size: 13px;
+margin-left: 18px;
+margin-top: 5px;
+color: rgb(170, 170, 170);
+}
+
+
+#otherImg{
+width: 200px;
+height: 106px;
+border-radius: 8px;
+margin-left: 18px;
+margin-top: 10px;
+}
+
+.dwnImages input[type="file"]{
+display: none;
+}
+
+.dotP {
+cursor: pointer;
+height: 65px;
+width: 116px;
+margin: 0 0.3px;
+background-color: #bbb;
+display: inline-block;
+
+transition: border 0.1s ease;
+}
+
+.dotP:hover{
+background-color: #717171;
+border: 1px solid rgb(187, 187, 187);
+}
+
+
+.storeRight input[type="text"]{
+width: 220px;
+border: 1px solid transparent;
+outline: none;
+border-radius: 3px;
+height: 28px;
+background-color: #202227;
+text-indent: 5px;
+color: rgb(202, 202, 202);
+transition: .3s;
+}
+
+.storeRight input:focus{
+border: solid 1px #6248AF;
+}
+
+#furtherArea{
+width: 650px;
+height: 280px;
+min-height: 90px;
+color: rgb(185, 185, 185);
+outline: none;
+border: solid 1px #373a41;
+border-radius: 6px;
+margin-left: 30px;
+margin-top: 30px;
+background-color: #292929;
+resize: none;
+overflow: hidden;
+padding: 8px;
+font-size: 15px;
+transition: 0.4s;
+}
+
+#storePriceInp{
+position: relative;
+margin-left: 23px;
+top: -25.9px;
+width: 75px;
+height: 30px;
+border-radius: 8px;
+background-color: #8774c100;
+color: rgb(218, 218, 218);
+text-indent: 14px;
+outline: none;
+border: 0px;
+font-size: 15px;
+}
+
+#submitStore{
+width: 400px;
+height: 50px;
+border-radius: 12px;
+border: 0px;
+background-color: #7754ac;
+color: rgb(226, 226, 226);
+margin-left: 410px;
+margin-top: 50px;
+margin-bottom: 50px;
+transition: .3s;
+font-size: 16px;
+}
+
+#submitStore:hover{
+background-color: rgb(157, 77, 231);
+cursor: pointer;
+}
+
+#summaryInp{
+width: 460px;
+height: 95px;
+color: rgb(185, 185, 185);
+outline: none;
+border: solid 1px #373a41;
+border-radius: 6px;
+margin-left: 60px;
+margin-top: 10px;
+margin-bottom: -15px;
+background-color: #292929;
+resize: none;
+overflow: hidden;
+padding: 8px;
+font-size: 14px;
+transition: 0.4s;
+}
+
+.storeTagsPbl{
+margin-left: 60px;
+margin-top: 45px;
+}
+
+.storeTagsPbl input[type="text"]{
+display: inline-block;
+text-indent: 6px;
+padding: 2px;
+width: 90px;
+height: 25px;
+margin-right: 5px;
+border-radius: 10px;
+background-color: #7754ac;
+color: rgb(205, 205, 205);
+}
+
+
+#cash{
+display: block;
+text-decoration: none;
+font-size: 12px;
+color: #C6C6C6;
+margin-top: 10px;
+transition: .2s;
+}
+
+#cash:hover{
+color: #e0e0e0;
+}   
+
+.cashTop h2{
+font-size: 34px;
+font-weight: 300;
+color: #C6C6C6;
+margin-left: 170px;
+margin-top: 50px;
+border-left: 3px solid #4e20da;
+padding-left: 20px;
+}
+
+.cashPrices{
+margin-left: 170px;
+margin-top : 30px;
+padding-bottom: 95px;
+}
+
+.cred1{
+width: 600px;
+height: 90px;
+background-color: #293446;
+/*background-color: #363636;*/
+border-radius: 10px;
+
+}
+
+
+
+/*Publish Library*/
+
+.rogue{
+    margin-left: 8%;
+}
+
+#libSpan{
+    display: block;
+    font-size: 30px;
+    color: #C6C6C6;
+    text-indent: 20px;
+    margin-top: 30px;
+}
+
+.libraryPublishTitle{
+    display: flex;
+}
+
+.heroesText{
+    position: relative;
+    margin-left: 55px;
+    top: 65px;
+    font-size: 13px ;
+}
+
+#heroLogoText{
+    margin-left: 280px;
+}
+
+.libContent{
+    display: flex;
+}
+
+.libContentG{
+    display: inline-block;
+    width: 550px;
+    min-height: 800px;
+    border-radius: 12px;
+    background-color: #293446;
+    margin-left: 15px;
+    margin-top: 30px;
+    
+}
+
+.libContentGIns{
+    margin-left: 15px;
+    margin-bottom: 20px;
+}
+
+.libContentInf{
+    
+    width: 680px;
+    height: 345px;
+    margin-top: 30px;
+    border-radius: 12px;
+    background-color: #2D2D2D;
+    overflow: hidden;
+
+    /*background: linear-gradient(to right, #293446 5%, #2D2D2D 10%);*/
+}
+
+#hero{
+    width: 720px;
+    height: 232px;
+    border-radius: 12px;
+}
+
+.gameLib{
+    display: inline-block;
+    width: 150px;
+    height: 225px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-left: 15px;
+    margin-top: 25px;
+    transition: .3s;
+    box-shadow: 0 0 10px  rgb(34, 34, 34);
+}
+
+.gameLib:hover{
+    transform: scale(1.05);
+}
+
+.gameLib img{
+    width: 150px;
+    height: 225px; /*161px default */
+    
+}
+
+
+#download{
+    display: inline-block;
+    width: 150px;
+    height: 38px;
+    margin-left: 25px;
+    position: relative;
+    top: -6px;
+    background-color: #7754ac;
+    color: rgb(218, 218, 218);
+    text-decoration: none;
+    border-radius: 8px;
+    text-indent: 32px;
+    padding-top: 9px;
+    transition: .3s;
+}
+
+#download:hover{
+    background-color: #8a67be;
+    color: rgb(224, 224, 224);
+}
+
+#libTitle{
+    display: inline-block;
+    font-size: 22px;
+    color: rgb(218, 218, 218);
+    margin-top: 25px;
+    margin-left: 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 220px;
+    overflow: hidden
+}
+
+#trophy{
+    
+    margin-left: 15px;
+    color: rgb(80, 80, 80);
+}
+
+#achievements{
+    display: inline-block;
+    font-size: 13px;
+    color: rgb(107, 107, 107);
+    position: absolute;
+    margin-top: 23px;
+    margin-left: 10px;
+}
+
+#achvBar{
+    display: inline-block;
+    width: 100px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: rgb(36, 36, 36);
+    position: absolute;
+    top: 48px;
+    margin-left: 10px;
+}
+
+#gamepad{
+    color: rgb(80, 80, 80);
+    position: absolute;
+    margin-left: 119px;
+    margin-top: 20px;
+    
+}
+
+.gameLibInf{
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+.gameLibSt input[type="file"], .gameLibTop input[type="file"] {
+    display: none;
+}
+
+#heroSt, #heroLogoSt{
+    width: 345px;
+    height: 232px;
+    border-radius: 12px;
+    transition: .3s;
+    opacity: 1;
+}
+
+#heroSt:hover, #heroLogoSt:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.gameLibSt{
+    display: inline-block;
+    width: 150px;
+    height: 225px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-left: 15px;
+    margin-top: 25px;
+    transition: .3s;
+    box-shadow: 0 0 10px  rgb(34, 34, 34);
+    opacity: 1;
+}
+
+.gameLibSt:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.gameLibSt img{
+    width: 150px;
+    height: 225px; /*161px default */
+    
+}
+
+.gameLibSt img:hover{
+    cursor: pointer;
+}
+
+.libContentGL{
+    display: inline-block;
+    width: 550px;
+    min-height: 300px;
+    border-radius: 12px;
+    background-color: #293446;
+    margin-left: 15px;
+    margin-top: 30px;
+    
+}
+
+#submitLibrary{
+    display: block;
+    width: 400px;
+    height: 50px;
+    border-radius: 12px;
+    border: 0px;
+    background-color: #7754ac;
+    color: rgb(216, 216, 216);
+    margin-left: 410px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    transition: .3s;
+    font-size: 16px;
+}
+
+#submitLibrary:hover{
+    background-color: #835fb9;
+    color: rgb(229, 229, 229);
+    cursor: pointer;
+}
+
+.siteIcon{
+    position: absolute;
+    margin-top: -210px;
+    margin-left: 180px;
+}
+
+
+.libraryImages{
+    display: flex;
+}

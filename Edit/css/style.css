@@ -3,18 +3,23 @@
     src: url('../../assets/fonts/Retro.ttf');
 }
 
+@font-face{
+    font-family: big;
+    src: url('../../assets/fonts/BigPixel.ttf');
+}
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: big;
 }
 
 /*Header|footer*/
 
 body{
-    background: linear-gradient(to bottom,#365853 0.5%, #1E1E1E 70%);
+    background: linear-gradient(to bottom,#240b3c 0.5%, #1E1E1E 70%);
     
-    font-family: retro;
 }
 
 
@@ -54,138 +59,151 @@ color: rgb(189, 189, 189);
 /*Header*/
 
 .header{
-width:100%;
-height: 100px;
-background-color: #1E1E1E;
-
+    width:100%;
+    height: 100px;
+    background-color: #160625;
+    
 }
 
 .nav{
-margin-left: 22%;
-padding-top: 35px;
+    margin-left: 130px;
+    padding-top: 35px;
 }
 
 .nav a{
-display: inline-block;
-font-size: 18px;
-text-decoration: none;
-color: rgb(189, 189, 189);
-margin-left: 55px;
-border: 2px transparent;
-transition: .3s;
+    display: inline-block;
+    font-size: 16px;
+    text-decoration: none;
+    color: rgb(218, 218, 218);
+    margin-left: 30px;
+    border: 2px transparent;
+    transition: .3s;
 }
 
 .nav a:hover{
-border-bottom: 2px solid ;
-color: #7e2ab6;
+    border-bottom: 2px solid ;
+    color: #7e2ab6;
+    cursor: pointer;
+    text-shadow: /*0 0 0.2em hsl(0 0% 100% / 0.5),*/ 0 0 1em #7e2ab6;
 
-text-shadow: /*0 0 0.2em hsl(0 0% 100% / 0.5),*/ 0 0 1em #7e2ab6;
-
-/*box-shadow: 0 10px 1em -0.3em #7e2ab6;*/
+    /*box-shadow: 0 10px 1em -0.3em #7e2ab6;*/
 }
 
 #ghostLogo{
-width: 150px;
-height: 84px;
+    width: 125px;
+    height: 76px;
+    /*fill: linear-gradient(101.9deg, #6477DD 7.67%, #C753C1 52.66%, #DC1DC3 93.7%);*/
+    margin-top: 6px;
+
 }
 
 #heartIcon{
-display: inline-block;
-font-size: 18px;
-color: rgb(189, 189, 189);
-margin-left: 90px;
-transition: .3s;
+    display: inline-block;
+    font-size: 16px;
+    color: rgb(218, 218, 218);
+    margin-left: 60px;
+    transition: .3s;
 }
 
 #heartIcon:hover{
-color: #7e2ab6;
-text-shadow:  0 0 1em #7e2ab6;
-cursor: pointer;
+    color: #7e2ab6;
+    text-shadow:  0 0 1em #7e2ab6;
+    cursor: pointer;
 }
 
 #heartText{
-display: inline-block;
-margin-left: 10px;  
-font-family: retro;
+    display: inline-block;
+    margin-left: 10px;  
+    font-family: big;
 }
 
 #cartIcon{
-display: inline-block;
-font-size: 18px;
-color: rgb(189, 189, 189);
-margin-left: 40px;
-transition: .3s;
+    display: inline-block;
+    font-size: 16px;
+    color: rgb(218, 218, 218);
+    margin-left: 40px;
+    transition: .3s;
 }
 
 #cartIcon:hover{
-color: #7e2ab6;
-text-shadow:  0 0 1em #7e2ab6;
-cursor: pointer;
+    color: #7e2ab6;
+    text-shadow:  0 0 1em #7e2ab6;
+    cursor: pointer;
 }
 
 
 .headContent{
-display: flex;
+    display: flex;
+    margin-left: 8%;
 }
 
 .headerProf{
-margin-left: 30px;
-padding-top: 23px;
+    margin-left: 130px;
+    padding-top: 23px;
 }
 
 .headerProf a{
-display: inline-block;
-text-decoration: none;
+    display: inline-block;
+    text-decoration: none;
 }
 
 #headImg{
-border: 1px solid rgb(143, 143, 143); 
-transition: .7s;
+    border: 1px solid rgb(143, 143, 143); 
+    transition: .7s;
 }
 
 #headImg:hover{
-border: 1px solid #47867c; 
+    border: 1px solid #915bc7; 
 }
 
 #userHeader{
-color: rgb(189, 189, 189);
-margin-left: 4px;
-position: relative;
-top: -25px;
-transition: .4s;
+    color: rgb(189, 189, 189);
+    margin-left: 4px;
+    position: relative;
+    top: -25px;
+    transition: .4s;
 }
 
 #userHeader:hover{
-color: #47867c;
+    color: #7e2ab6;
+    cursor: pointer;
+    text-shadow: 0 0 1em #7e2ab6;
 }
 
 #arrDownIcon{
-font-size: 14px;
-margin-left: 2px;
+    font-size: 14px;
+    margin-left: 2px;
 }
 
 #headMoney{
-position: relative;
-font-size: 11px;
-left: -100px;
-color: rgb(163, 163, 163);
-transition: .4s;
+    display: block;
+    position: relative;
+    font-size: 11px;
+    left: 48px;
+    top: -15px;
+    color: rgb(163, 163, 163);
+    transition: .4s;
 }
 
 #headMoney:hover{
-color: rgb(189, 189, 189);
+    color: rgb(189, 189, 189);
 }
 
 #logout{
-position: relative;
-color: rgb(163, 163, 163);
-font-size: 10px;
-left: -98px;
+    display: block;
+    position: relative;
+    color: rgb(163, 163, 163);
+    font-size: 10px;
+    left: 115px;
+    top: -29px;
+    transition: .4s;
 }
 
 #logout:hover{
-color: rgb(189, 189, 189);
+    cursor: pointer;
+    color: rgb(189, 189, 189);
 }
+
 
 
 
@@ -392,4 +410,116 @@ color: rgb(189, 189, 189);
     border-left: 3px solid #4e20da;
     color: rgb(221, 221, 221);
     
+}
+
+
+/*Responsivo*/
+
+@media screen and (max-width: 1400px) {
+
+    /*Header*/
+    .nav{
+        margin-left: 5%;
+    }
+
+    .nav a {
+        font-size: 16px;
+        margin-left: 10px;
+    }
+
+    #heartIcon{
+        font-size: 16px;
+        margin-left: 20px;
+    }
+
+    #cartIcon{
+        font-size: 16px;
+        margin-left: 15px;
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+
+    /*Header*/
+    .nav{
+        margin-left: 2%;
+    }
+
+    .loginButtonH{
+        margin-left: -50px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+
+    /*Header*/
+
+    .nav{
+        margin-left: 1%;
+    }
+
+    .loginButtonH{
+        margin-left: -80px;
+    }
+}
+
+@media screen and (max-width: 1030px) {
+
+    /*Header*/
+
+    .header{
+        height: 80px;
+    }
+
+    .nav{
+        display: none;
+    }
+
+    .loginButtonH{
+        display: none;
+    }
+
+
+    .headerProf{
+        display: none;
+    }
+
+    .headContent{
+        margin-left: 44%;
+    }
+
+}
+
+
+@media screen and (max-width: 600px){
+
+    /*Header*/
+
+    .headContent{
+        margin-left: 38%;
+    }
+
+
+ 
+
+}
+
+@media screen and (max-width: 500px){
+ /*Footer*/
+
+    #rights{
+        font-size: 10px;
+    }
+    
+    .navFooter{
+        font-size: 10px;
+        margin-left: 12%;
+    }
+    
+    .navFooter a{
+        margin-left: -6px;
+    }
+
+   
 }

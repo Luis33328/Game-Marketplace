@@ -4,7 +4,7 @@
         <title>Cadastre-se</title>
 
         <script src="https://kit.fontawesome.com/50d53b2eac.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style.css">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,6 +19,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
         
     </head>
 
@@ -26,32 +27,37 @@
         <div class="container">
             <div class="header">
                 <div class="headContent">
+
+                    <a href="../index.html"><img id="ghostLogo" src="../home/img/logofinal.svg" /> </a>
+
                     <div class="nav">
-                        <a href="../index.html">Home</a>
-                        <a href="">Biblioteca</a>
-                        <a href="">Meu Perfil</a>
-                        <a href="">Sobre</a>
+                        <ul class="nav-links">
+                        
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../Library/library.html">Biblioteca</a></li>
+                            <li><a href="../Profile/profile.html">Meu Perfil</a></li>
+                            <li><a href="">Sobre</a></li>
 
-                        <i id="heartIcon" class="fa-regular fa-heart"><span id="heartText">Favoritos</span></i>
+                            <li><i id="heartIcon" class="fa-regular fa-heart"><span id="heartText">Favoritos</span></i></li>
 
-                        <i id="cartIcon" class="fa-solid fa-cart-shopping"></i>
-                    </div>
+                            <li><i id="cartIcon" class="fa-solid fa-cart-shopping"></i></li>
 
-                    <!--<div class="headerProf">
-                        <a href="" id="headImg"><image src="public/images/iconBig.png" width="40" height="40"></image></a>
-                        <a id="userHeader" href="">Usuario <i id="arrDownIcon" class="fa-solid fa-angle-down"></i></a>
+                            <div class="loginButtonH">
+                                <a href="login.html" >Login</a>
+                            </div>
+                        </ul>
+                        <div class="burger">
+                            <div class="line1"></div>
+                            <div class="line2"></div>
+                            <div class="line3"></div>
+                
+                        </div>
 
-                        <a id="headMoney" href="">R$ 00,00</a>
-                    </div>-->
-
-                    <div class="loginButtonH">
-                        <a href="../Login/Login.html" >Fazer Login</a>
                     </div>
                 </div>
 
             </div>
-
-            <form id="signUpForm" onsubmit="valid()">
+            <form id="signUpForm">
                 <div class="signBack">
                     <div class="signIn">
 
@@ -59,11 +65,24 @@
 
                         <input id="username" type="text" name="username" placeholder="Usuário" autocomplete="off" /> 
                         <input id="email" type="email" name="email" placeholder="E-mail" autocomplete="off" /> 
-                        <input id="password" type="password" name="password" placeholder="Senha" autocomplete="off" /> 
+
+                        <div class="pw-meter">
+                            <input id="password" type="password" name="password" placeholder="Senha" autocomplete="off">
+                            
+                                <div class="pw-display-toggle-btn">
+                                    <i id="olho" class="fa fa-eye"></i>
+                                    <i id="olhoSlash" class="fa fa-eye-slash"></i>
+                                </div>
+                                <div class="pw-strength">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                        </div>
+
                         <input id="confirm" type="password" name="confirm" placeholder="Confirmar senha" autocomplete="off" />
                         
 
-                        <button>SALVAR</button>
+                        <button type="button" onclick="valid()">SALVAR</button>
                     </div>
                 </div>
             </form>
@@ -71,32 +90,200 @@
 
         <script>
 
+            /*$(document).on('keypress',function(e) {
+                if(e.which == 13) {
+                    valid();
+                    return false;
+                }
+            });*/
+            const navSlide = () => {
+                const burger = document.querySelector('.burger');
+                const nav = document.querySelector('.nav-links');
+                const navLinks = document.querySelectorAll('.nav-links li');
+
+                burger.addEventListener('click',() => {
+                    //toggle nav
+                    nav.classList.toggle('nav-active');
+
+
+                    //animate links
+                    navLinks.forEach((link, index) =>{
+                        if(link.style.animation) {
+                            link.style.animation = '';
+                        } else {
+                            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                        }
+                    });
+
+                    //burger animation
+                    burger.classList.toggle('toggle');
+                    
+
+
+                });
+            }
+
+            navSlide();
+
+            function getPasswordStrength(password){
+                let s = 0;
+                if(password.length > 6){
+                s++;
+                }
+                if(password.length > 9){
+                s++;
+                }
+                if(/[A-Z]/.test(password)){
+                s++;
+                }
+                if(/[0-9]/.test(password)){
+                s++;
+                }
+                if(/[^A-Za-z0-9]/.test(password)){
+                s++;
+                }
+                return s;
+            }
+            document.querySelector(".pw-meter #password").addEventListener("focus",function(){
+                document.querySelector(".pw-meter .pw-strength").style.display = "block";
+            });
+            document.querySelector(".pw-meter .pw-display-toggle-btn").addEventListener("click",function(){
+                let el = document.querySelector(".pw-meter .pw-display-toggle-btn");
+                if(el.classList.contains("active")){
+                document.querySelector(".pw-meter #password").setAttribute("type","password");
+                el.classList.remove("active");
+                } else {
+                document.querySelector(".pw-meter #password").setAttribute("type","text");
+                el.classList.add("active");
+                }
+            });
+            
+            document.querySelector(".pw-meter #password").addEventListener("keyup",function(e){
+                let password = e.target.value;
+                let strength = getPasswordStrength(password);
+                let passwordStrengthSpans = document.querySelectorAll(".pw-meter .pw-strength span");
+                strength = Math.max(strength,1);
+                passwordStrengthSpans[1].style.width = strength*20 + "%";
+                if(strength < 2){
+                passwordStrengthSpans[0].innerText = "Fraca";
+                passwordStrengthSpans[0].style.color = "#fff";
+                passwordStrengthSpans[1].style.background = "#d13636";
+                } else if(strength >= 2 && strength <= 4){
+                passwordStrengthSpans[0].innerText = "Média";
+                passwordStrengthSpans[0].style.color = "#fff";
+                passwordStrengthSpans[1].style.background = "#e6da44";
+                } else {
+                passwordStrengthSpans[0].innerText = "Forte";
+                passwordStrengthSpans[0].style.color = "#fff";
+                passwordStrengthSpans[1].style.background = "#20a820";
+                }
+            });
+
+
+
             var exp = /^(?=.{6,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$/;
 
             function valid(){
-                var inp = document.getElementById("password").value;
-                //var check = alert(exp.test(inp));
-                var check = exp.test(inp);
+                var user = document.getElementById("username").value;
+                if(user.length >= 4){
+                    var inp = document.getElementById("password").value;
+                    var confirm = document.getElementById("confirm").value;
+                    //var check = alert(exp.test(inp));
+                    var check = exp.test(inp);
 
-                if(check == true){
-                    alert("A senha cadastrada foi forte!");
-                    document.getElementById("signUpForm").method = "POST" ;
-                    document.getElementById("signUpForm").action = "signUp.php";
-                    document.getElementById("signUpForm").submit();
-                    return true;
+                    if(inp == confirm){
+                        if(check == true){
+                            //alert("A senha cadastrada foi forte!");
+                            //document.getElementById("signUpForm").method = "POST" ;
+                            //document.getElementById("signUpForm").action = "signUp.php";
+                            //document.getElementById("signUpForm").submit();
+                            //console.log("oi");
+                            //data = $("#signUpForm").serialize();
+                            //console.log(data);
+
+
+
+
+
+                            var user = document.getElementById("username").value;
+                            var email = document.getElementById("email").value;
+                            var pass = document.getElementById("password").value;
+
+
+                            chars = "";
+
+                            for(i = 12; i > 0; i--){
+                                chars += email.charAt(i);
+                            }
+
+                            //alert(chars);
+
+                            var passFinal = CryptoJS.SHA256(pass + chars).toString();
+
+                            //alert(passFinal);
+
+
+
+                            var data = {
+                                user: user,
+                                pass: passFinal,
+                                email: email
+                            };
+
+                            var message = JSON.stringify(data).toString();
+
+                            var key = CryptoJS.enc.Utf8.parse('1564196849685165');
+                            //var iv = '4164149658496541';
+
+
+                            var iv = CryptoJS.lib.WordArray.random(128 / 16).toString();
+
+                            
+
+                            var encrypted = CryptoJS.AES.encrypt(message, key, {
+                                iv: CryptoJS.enc.Utf8.parse(iv),
+                                mode: CryptoJS.mode.CBC,
+                                padding: CryptoJS.pad.ZeroPadding
+                            });
+
+                            $.ajax({
+                                type: "POST",
+                                dataType: "json",
+                                data:{
+                                    message: iv + encrypted.toString()
+                                    
+                                },
+                                url: "signUp.php", 
+                                success: function(retorno){
+                                    console.log(retorno);
+                                    if(retorno.status == "sent"){
+                                        alert("Cadastro realizado com sucesso!")
+                                        location.href = "../index.html";
+                                    }
+                                },
+                                error: function(err){
+                                    console.log(err);
+                                }
+                                
+                            });
+                            return true;
+                        }
+                        else{
+                            alert("Senha muito fraca. Tente adicionar letras maiúsculas, caracteres especiais e números.");
+                            return false;
+                        }
+                    }
+                    else{
+                        alert("A senha deve ser confirmada.");
+                        return false;
+                    }
                 }
                 else{
-                    alert("Senha muito fraca. Tente adicionar letras maiúsculas, caracteres especiais e números.");
-                    return false;
+                    alert("Usuário muito pequeno");
                 }
-
-                /*if(check == true){
-                    alert("deu");
-                }
-                else{
-                    alert("nao");
-                }*/
+                
             }
+
 
 
         </script>

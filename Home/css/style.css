@@ -12,16 +12,22 @@
     src: url('../../assets/fonts/Retro.ttf');
 }
 
+@font-face{
+    font-family: big;
+    src: url('../../assets/fonts/BigPixel.ttf');
+}
+
 
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: retro;
+    font-family: big;
 }
 
 body{
-    background: linear-gradient(to bottom,#434345 0.5%, #1E1E1E 70%);
+    
+    background-color: #160625;
     
     
 }
@@ -35,7 +41,7 @@ body{
     height: 30px;
     height: 100px;
     margin-top: 50px;
-    background-color: #1a1a1a;
+    background-color: #10041b;
 
 }
 
@@ -77,21 +83,21 @@ body{
 .header{
     width:100%;
     height: 100px;
-    background-color: #1E1E1E;
+    background-color: #160625;
     
 }
 
 .nav{
-    margin-left: 22%;
+    margin-left: 10%;
     padding-top: 35px;
 }
 
 .nav a{
     display: inline-block;
-    font-size: 18px;
+    font-size: 16px;
     text-decoration: none;
-    color: rgb(189, 189, 189);
-    margin-left: 55px;
+    color: rgb(218, 218, 218);
+    margin-left: 30px;
     border: 2px transparent;
     transition: .3s;
 }
@@ -106,15 +112,18 @@ body{
 }
 
 #ghostLogo{
-    width: 150px;
-    height: 84px;
+    width: 125px;
+    height: 76px;
+    /*fill: linear-gradient(101.9deg, #6477DD 7.67%, #C753C1 52.66%, #DC1DC3 93.7%);*/
+    margin-top: 6px;
+
 }
 
 #heartIcon{
     display: inline-block;
-    font-size: 18px;
-    color: rgb(189, 189, 189);
-    margin-left: 90px;
+    font-size: 16px;
+    color: rgb(218, 218, 218);
+    margin-left: 60px;
     transition: .3s;
 }
 
@@ -131,8 +140,8 @@ body{
 
 #cartIcon{
     display: inline-block;
-    font-size: 18px;
-    color: rgb(189, 189, 189);
+    font-size: 16px;
+    color: rgb(218, 218, 218);
     margin-left: 40px;
     transition: .3s;
 }
@@ -146,11 +155,13 @@ body{
 
 .headContent{
     display: flex;
+    margin-left: 8%;
 }
 
 .headerProf{
-    margin-left: 30px;
-    padding-top: 23px;
+    margin-left: 90px;
+    /*margin-left: 130px;*/
+    margin-top: -8px;
 }
 
 .headerProf a{
@@ -158,13 +169,15 @@ body{
     text-decoration: none;
 }
 
+
+
 #headImg{
     border: 1px solid rgb(143, 143, 143); 
     transition: .7s;
 }
 
 #headImg:hover{
-    border: 1px solid #47867c; 
+    border: 1px solid #915bc7; 
 }
 
 #userHeader{
@@ -176,7 +189,9 @@ body{
 }
 
 #userHeader:hover{
-    color: #47867c;
+    color: #7e2ab6;
+    cursor: pointer;
+    text-shadow: 0 0 1em #7e2ab6;
 }
 
 #arrDownIcon{
@@ -185,9 +200,11 @@ body{
 }
 
 #headMoney{
+    display: block;
     position: relative;
     font-size: 11px;
-    left: -100px;
+    left: 48px;
+    top: -15px;
     color: rgb(163, 163, 163);
     transition: .4s;
 }
@@ -197,51 +214,243 @@ body{
 }
 
 #logout{
+    display: block;
     position: relative;
     color: rgb(163, 163, 163);
     font-size: 10px;
-    left: -98px;
+    left: 115px;
+    top: -29px;
+    transition: .4s;
 }
 
 #logout:hover{
+    cursor: pointer;
     color: rgb(189, 189, 189);
 }
 
 .loginButtonH a{
     display: inline-block;
     text-decoration: none;
-    border: 3px solid #4b196c;
+    font-size: 14px;
+    border: 0px;
+    background: linear-gradient(101.9deg, #7273D9 7.67%, #B35BC7 52.66%, #D927C3 93.7%);
     border-radius: 8px;
-    color: #4b196c;
-    width: 130px;
+    color: rgb(218, 218, 218);
+    width: 140px;
     height: 40px;
     text-align: center;
-    padding-top: 7px;
-    margin-left: 75px;
-    margin-top: 27px;
+    padding-top: 11px;
+    margin-left: 150px;
+    margin-top: -8px;
     transition: .3s;
 }
 
 .loginButtonH a:hover{
-    border: 3px solid #7e2ab6;
     text-shadow:  0 0 1em #7e2ab6;
     box-shadow:  0 0 0.5em #7e2ab6;
-    color: #7e2ab6;
+    color: rgb(235, 235, 235);
+    border:0;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-links li{
+    list-style: none;
+}
+
+
+.burger{
+    position: relative;
+    display: none;
+    cursor: pointer;
+    margin-left: 120px;
+    margin-top: -6px;
+}
+
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: rgb(226, 226, 226);
+    margin: 5px;
+    transition: all 0.3s ease;
+    
+}
+
+
+/*Search*/
+
+
+.search{
+    position: absolute;
+    left: 66%;
+    top: 105px;
+}
+
+.search input[type="text"]{
+    border-radius: 8px;
+    width: 300px;
+    height: 40px;
+    border: 0px;
+    margin-left: 100px;
+    margin-top: 12px;
+    padding: 20px;
+    outline: none;
+    color: #C2BED1;
+    background-color: #1f1429;
+}
+
+.search a{
+    display: inline-block;
+}
+
+#magGlass{
+    color: #6c46dd;
+    position:absolute;
+    width: 60px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #1f1429;
+    top:12px;
+    right: -10px;
+    transition: .3s;
+}
+
+#glassIcon{
+    margin-top: 18px;
+    margin-left: 15px;
+    transition: .3s;
+}
+
+#glassIcon:hover{
+    color: #8566e0;
+    cursor: pointer;
 }
 
 
 /*Destaques*/
+
+.highlight{
+    -webkit-mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 75%,  rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+.highContent{
+    display: block;
+    position: absolute;
+    margin-top: -340px;
+    margin-left: 60px;
+    min-height: 250px;
+    border-radius: 12px;
+    backdrop-filter: blur(4px);
+}
+
 .highLogo{
     margin-top: -220px;
     margin-left: 20px;
     
 }
 
+.highDescT{
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    
+
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+
+
+}
+
+.highDesc{
+    display: block;
+    position: relative;
+    
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+
+    color: #DEDEDE;
+    max-width: 400px;
+
+}
+
+.highButtons{
+    margin-top: 30px;
+}
+
+.highBuy{
+    display: block;
+    position: absolute;
+    
+    text-decoration: none;
+    font-size: 13px;
+    border: 0px;
+    background: linear-gradient(101.9deg, #7273D9 7.67%, #B35BC7 52.66%, #D927C3 93.7%);
+    border-radius: 4px;
+    color: rgb(218, 218, 218);
+    width: 100px;
+    height: 41px;
+    text-align: center;
+    padding-top: 12px;
+
+    transition: .3s;
+}
+
+.highBuy:hover{
+    text-shadow:  0 0 1em #7e2ab6;
+    box-shadow:  0 0 0.5em #7e2ab6;
+    color: rgb(235, 235, 235);
+    cursor: pointer;
+}
+
+.highRead{
+    position: absolute;
+    text-decoration: none;
+    color: rgb(235, 235, 235);
+    font-size: 13px;
+    left: 50px;
+    width: 110px;
+    height: 41px;
+    margin-left: 70px;
+    padding-left: 21px;
+    padding-top: 11px;
+    transition: .3s;
+}
+
+.highRead:hover{
+    text-shadow:  0 0 1em #7e2ab6;
+    box-shadow:  0 0 0.5em #7e2ab6;
+    color: rgb(235, 235, 235);
+    cursor: pointer;
+}
+
+.highRead::before{
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 110px;
+    height: 41px;
+    border-radius: 4px; /*1*/
+    border: 1px solid transparent; /*2*/
+    background: linear-gradient(95.92deg, #6578DD 2.11%, #B35BC7 47.11%, #DC1DC4 98.85%) border-box; /*3*/
+    -webkit-mask: /*4*/
+    linear-gradient(#fff 0 0) padding-box, 
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor; /*5'*/
+    mask-composite: exclude; /*5*/
+}
+
 /*Principais publishers*/
 
 .publishers{
     display: flex;
-    margin-left: 12%;
+    margin-left: 10%;
     margin-top: 38px;
     
 }
@@ -249,24 +458,27 @@ body{
 
 #publiContent{
     display: block;
-    width: 140px;
+    width: 155px;
     height: 100px;
-    background-color: #1E1E1E;
+    background: linear-gradient(to bottom,  #1B113A 3%, #150625 90%);  
     text-decoration: none;
-    border-radius: 12px;
+    border-radius: 20px;
     color:rgb(180, 180, 180);
     margin-right: 25px;
+    border: 1px solid #ffffff1b;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     transition: .3s;
 
 }
 
 #publiContent:hover{
     transform: scale(1.05);
+    box-shadow:  0 3px 0.2em #771976;
 }
 
 #sonyIcon{
     display: inline-block;
-    margin-left: 43px;
+    margin-left: 52px;
     margin-top: 15px;
     font-size: 42px;
 }
@@ -275,7 +487,7 @@ body{
     display: block;
     font-family: ps1;
     margin-top: 5px;
-    margin-left: 32px;
+    margin-left: 41px;
 }
 
 #capcomIcon{
@@ -322,6 +534,10 @@ body{
     margin-top: 70px;
 }
 
+.promoDivs{
+    display: flex;
+}
+
 #saleText{
     display: inline-block;
     font-size: 30px;
@@ -331,24 +547,29 @@ body{
 .sale1{
     display: flex;
     position: relative;
-    width: 534px;
-    height: 300px;
+    width: 330px;
+    height: 185px;
     margin-top: 30px;
+    margin-right: 30px;
     border-radius: 6px;
     /*background-color: #242424;*/
     background: linear-gradient(to bottom, #242424 2%, #00000000 50% );
     transition: .6s;
 }
 
-.sale1:hover{
-    width: 1200px;
-    
+.saleImageD{
+    transition: .3s;
+    opacity: 1;
+}
+
+.saleImageD:hover{
+    opacity: 0.7;
+    cursor: pointer;
 }
 
 #saleImage{
 
-    border-radius: 6px;
-    margin: 12px;
+    border-radius: 20px;
     transition: .3s;
 }
 
@@ -357,18 +578,8 @@ body{
     text-decoration: none;
 }
 
-.saleContent{
-    display: none;
-    margin-left: 25px;
-    margin-top: 15px;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
 
-.saleContent.fade{
-    opacity: 1;
-    pointer-events: all;
-}
+
 
 #saleTitle{
     font-size: 35px;
@@ -385,7 +596,8 @@ body{
     height: 25px;
     padding-top: 3px;
     border-radius: 6px;
-    background-color: #50756f;
+    margin-right: 10px;
+    background-color:#7754ac;
     color: rgb(180, 180, 180);
     text-align: center;
 }
@@ -394,7 +606,7 @@ body{
     display: inline-block;
     font-size: 23px;
     margin-top: 12px;
-    margin-right: 2px;
+    margin-right: 10px;
     color: rgb(87, 87, 87);
 }
 
@@ -404,15 +616,46 @@ body{
     position: absolute;
     left:100%;
     margin-left: -50px;
-    background: linear-gradient(to right, #00000000 0.1%, #0f0f0f 100%);
+    background: linear-gradient(to right, #00000000 30%, #160625 100%);
     transition: .3s;
 }
 
+#angIcon{
+    background: linear-gradient(180deg, #6578DD 0%, #D925C3 100%);
+    -webkit-background-clip: text;
+
+    background-clip: text;
+   -webkit-text-fill-color:transparent;
+}
+
 #angleRightIcon{
+    position: absolute ;
+    font-size: 19px;
+    margin-top: 80px;
+    margin-left: 18px;
+    padding-left: 9px;
+    padding-top: 4px;
+}
+
+#angleRightIcon::before{
+    content: "";
+    position: absolute;
     display:block;
-    font-size: 50px;
-    margin-left: 15px;
-    margin-top: 120px;
+
+    inset: 0;
+    height: 24px;
+    width: 24px;
+   
+    
+    border-radius: 50%;
+
+    border: 2px solid transparent; /*2*/
+    background: linear-gradient(180deg, #6578DD 0%, #D925C3 100%) border-box; /*3*/
+    -webkit-mask: /*4*/
+    linear-gradient(#fff 0 0) padding-box, 
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor; /*5'*/
+    mask-composite: exclude; /*5*/
     color: rgb(189, 189, 189);
 }
 
@@ -459,16 +702,15 @@ body{
 #discountBanner{
     display: block;
     font-size: 22px;
-    margin-left: 12px;
-    padding-top: 5px;
+    padding-top: 3px;
     position: absolute;
-    top: 195px;
-    border-radius: 2px;
-    width: 55px;
+    top: 153px;
+    border-radius: 9px;
+    width: 60px;
     height: 32px;
     text-align: center;
-    background-color: rgb(106, 145, 137);
-    color: rgb(151, 196, 187);
+    background-color: #6e3a9f;
+    color: #ba86ea;
     opacity: 0.95;
 }
 
@@ -496,7 +738,7 @@ body{
 }
 
 .highDotsDiv{
-    margin-left: 48%
+    margin-left: 46%
 }
 
 .dot, .recDots, .highDots {
@@ -505,8 +747,8 @@ body{
     height: 7px;
     width: 7px;
     border-radius: 50%;
-    margin: 0 0.3px;
-    background-color: #bbb;
+    margin: 0 2.5px;
+    background-color: rgb(206, 206, 206);
     display: inline-block;
     
     transition: border 0.1s ease;
@@ -514,7 +756,7 @@ body{
 
 .activeSt,
 .dot:hover, .recDots:hover {
-    background-color: #717171;
+    background-color: rgba(216, 40, 195, 1);
 }
 
 /* Fading animation */
@@ -550,6 +792,7 @@ body{
 
 .forYou{
     margin-left: 16%;
+    margin-top: 40px;
 }
 
 .recGame{
@@ -582,6 +825,7 @@ body{
 
 #recImg:hover{
     opacity: 0.8;
+    cursor: pointer;
 }
 
 #recTItle{
@@ -594,6 +838,7 @@ body{
 
 #recTitle:hover{
     color: rgb(201, 201, 201); 
+    cursor: pointer;
 }
 
 #forYouText{
@@ -610,8 +855,8 @@ body{
     text-align: center;
     padding-top: 8px;
     border-radius: 4px;
-    background-color: rgb(60, 82, 77);
-    color: rgb(139, 199, 187);
+    background: linear-gradient(101.9deg, #6668c2 15.67%, #994eaa 52.66%);
+    color: #b2b2b2;
     font-size: 18px;
 }
 
@@ -644,7 +889,7 @@ body{
 }
 
 .prev:hover, .prevHigh:hover{
-    background: linear-gradient(to left, #00000000 0.1%, rgb(60, 82, 77) 100%);
+    background: linear-gradient(to left, #00000000 0.1%, #6b3a7f 100%);
 }
 
 .next {
@@ -660,7 +905,125 @@ body{
 }
 
 .next:hover, .nextHigh:hover{
-    background: linear-gradient(to right, #00000000 0.1%, rgb(60, 82, 77) 100%);
+    background: linear-gradient(to right, #00000000 0.1%, #6b3a7f 100%);
+}
+
+
+/*Novidades*/
+
+.newGames{
+    margin-left: 16%;
+    margin-top: 40px;
+    
+}
+
+.g3{
+    width: 680px;
+    height: 121px;
+    background-color: #1f2735;
+    margin-right: 50px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+
+    
+    background: linear-gradient(to bottom,  #170e33 3%, #150625 90%);  
+    background-color: #150625;
+    border: 1px solid #ffffff1b;
+}
+
+#nov{
+    display: inline-block;
+    font-size: 30px;
+    margin-bottom: 35px;
+}
+
+.new a {
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(215, 215, 215);
+    transition: .3s;
+}
+
+#small{
+    border-radius: 10px;
+    transition: .3s;
+}
+
+#small:hover{
+    opacity: 0.66;
+    cursor: pointer;
+}
+
+
+.smallName{
+    display: inline-block;
+    font-size: 18px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 290px;
+    display: block;
+    overflow: hidden;
+    transition: .3s;
+
+
+}
+
+.smallName:hover{
+    color: rgb(227, 227, 227);
+    cursor: pointer;
+}
+
+#windows{
+    position: relative;
+    top: 27px;
+    left: 2px;
+    color: rgb(119, 119, 119);
+}
+
+.small-Information{
+    display:inline-block;
+    position:relative;
+    top: -70px;
+    margin-left: 10px;
+    color: rgb(119, 119, 119);
+}
+
+.smallTags{
+    position: relative;
+    top: 50px;
+    left: 2px;
+}
+
+.smallTags:hover{
+    cursor: default;
+}
+
+.class_tag{
+    font-size: 13px;
+    margin-left: 0px;
+}
+
+
+.price{
+    display: block;
+    position: relative;
+    margin-left: 550px;
+    top: -80px;
+}
+
+.priceSp{
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    border-radius: 8px;
+    background: linear-gradient(101.9deg, #6668c2 15.67%, #994eaa 52.66%);
+    color: #bebebe;
+    text-indent: 8px;
+    padding-top: 5px;
+}
+
+.priceSp:hover{
+    cursor: default;
 }
 
 
@@ -670,22 +1033,26 @@ body{
 
     /*Header*/
     .nav{
-        margin-left: 20%;
+        margin-left: 5%;
     }
 
     .nav a {
         font-size: 16px;
-        margin-left: 45px;
+        margin-left: 10px;
+    }
+    
+    .loginButtonH a{
+       margin-left: 150px;;
     }
 
     #heartIcon{
         font-size: 16px;
-        margin-left: 70px;
+        margin-left: 20px;
     }
 
     #cartIcon{
         font-size: 16px;
-        margin-left: 60px;
+        margin-left: 15px;
     }
 
     /*Publishers*/
@@ -702,7 +1069,15 @@ body{
 
     /*Header*/
     .nav{
-        margin-left: 10%;
+        margin-left: 2%;
+    }
+
+    .loginButtonH{
+        margin-left: -50px;
+    }
+
+    .headerProf{
+        margin-left: 50px;
     }
 
     /*Destaques*/
@@ -779,7 +1154,23 @@ body{
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
+
+
+    .nav{
+        margin-left: 1%;
+    }
+
+    .loginButtonH{
+        margin-left: -80px;
+    }
+
+    .sale1{
+
+    }
+}
+
+@media screen and (max-width: 1030px) {
 
     /*Header*/
 
@@ -787,12 +1178,41 @@ body{
         height: 80px;
     }
 
-    .nav{
-        display: none;
+    .nav-links li{
+        opacity: 0;
     }
 
-    .loginButtonH{
-        display: none;
+
+    .loginButtonH a{
+        position: relative;
+        background: none;
+        border-radius: 0;
+        left: 33px;
+        top: -30px;
+    }
+
+    .loginButtonH a:hover{
+        border: 0px;
+        color: #7e2ab6;
+        cursor: pointer;
+        text-shadow:0 0 1em #7e2ab6;
+        box-shadow: none;
+    }
+
+    .nav a{
+        display: inline-block;
+        font-size: 16px;
+        text-decoration: none;
+        color: rgb(218, 218, 218);
+        margin-left: 30px;
+        border: 2px transparent;
+        transition: .3s;
+    }
+    
+
+    .sale1{
+        margin-top: 30px;
+        margin-right: 15px;
     }
 
 
@@ -807,13 +1227,6 @@ body{
 
     /*Descontos*/
 
-    .sale1{
-        width: 485px;
-    }
-
-    .sale1:hover{
-        width: 485px;
-    }
 
     .expand{
         display: none;
@@ -828,6 +1241,93 @@ body{
     .loginSpace{
         display: block;
     }
+
+    .highDesc{
+        display: none;
+    }
+
+
+    .highContent{
+        margin-top: -230px;
+        backdrop-filter: none;
+    }
+    .headContent{
+        margin-left: 44%;
+    }
+
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+        position: absolute;  
+        right: 0px; 
+        height: 92vh;
+        top: 8vh;
+        background-color: #1b0d29;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        z-index: 1;
+    }  
+    .nav-links li{
+        opacity: 1;
+    }
+    .burger{
+        display: block;
+
+    }
+    .nav-active{
+        transform: translateX(0%);
+    }
+    
+    @keyframes navLinkFade {
+        from{
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+    
+    .toggle .line1{
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle .line2{
+        opacity: 0;
+    }
+    .toggle .line3{
+        transform: rotate(45deg) translate(-5px, -6px);
+        
+    
+    }
+
+    .headerProf{
+        position: relative;
+        left: -35px;
+    }
+}
+
+
+
+@media screen and (max-width: 800px){
+
+    .highDescT{
+    
+        font-size: 45px;
+    
+    }
+
+    .highContent{
+        margin-top: -200px;
+    }
+
+    
+    
 }
 
 
@@ -835,8 +1335,22 @@ body{
 
     /*Descontos*/
 
+    .promoDivs{
+        display: block;
+    }
+
+    #saleText{
+        margin-left: -50px;
+    }
+
+    .sale1{
+        width: 274px;
+        height: 139px;
+        margin-top: 80px;
+    }
+
     .promos{
-        margin-left: 8%;
+        margin-left: 22%;
     }
 
     .forYou{
@@ -862,7 +1376,77 @@ body{
     /*Login*/
 
     .login{
-        margin-left: 20%;
+        margin-left: 32%;
+    }
+
+    .g3{
+        width: 259px;
+        height: 121px;
+
+    }
+
+    .small-Information{
+        display: none;
+    }
+    .price{
+        display: none;
+    }
+
+    .newGames{
+        margin-left: 22%;
+        margin-top: -38px;
+    }
+
+    
+    .highDescT{
+    
+        font-size: 31px;
+    
+    }
+
+    .highContent{
+        margin-top: -150px;
+    }
+
+    .highBuy{
+        font-size: 13px;
+        width: 80px;
+        height: 30px;
+        padding: 6px;
+    }
+    
+    
+    .highRead{
+        font-size: 11px;
+        width: 80px;
+        height: 30px;
+        margin-left: 50px;
+        padding-left: 12px;
+        padding-top: 9px;
+    }
+
+    .highRead::before{
+        width: 80px;
+        height: 30px;
+
+    }
+
+
+    .headContent{
+        margin-left: 38%;
+    }
+
+
+
+    .search{
+        position: absolute;
+        left: -7%;
+        top: 300px;
+        padding-bottom: 50px;
+    }
+
+    .promos{
+        margin-top: 140px;
     }
 
 
@@ -873,8 +1457,9 @@ body{
     /*Descontos*/
 
     .promos{
-        margin-left: 3px;
+        margin-left: 16%;
     }
+
 
     /*Recomendações*/
     .forYou{
@@ -882,7 +1467,7 @@ body{
     }
 
     #forYouText{
-        margin-left: -21px;
+        margin-left: 0px;
     }
 
 
@@ -899,6 +1484,11 @@ body{
     
     .navFooter a{
         margin-left: -6px;
+    }
+
+
+    .search{
+        left: -15%;
     }
 
 }

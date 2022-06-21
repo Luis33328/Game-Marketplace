@@ -1,0 +1,490 @@
+@font-face{
+    font-family: big;
+    src: url('../../assets/fonts/BigPixel.ttf');
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: big;
+}
+
+body{
+    
+    background: linear-gradient(to bottom,#240b3c 0.5%, #1E1E1E 100%);
+    
+    
+    
+}
+
+
+
+/*Footer*/
+
+.footer{
+    width: 100%;
+    height: 30px;
+    height: 100px;
+    margin-top: 50px;
+    background-color: #10041b;
+
+}
+
+
+
+#rights{
+    display: inline-block;
+    margin-left: 11%;
+    padding-top: 20px;
+    word-wrap: break-word;
+    max-width: 850px;
+    font-size: 11px;
+    color: rgb(179, 179, 179);
+}
+
+.navFooter{
+    font-size: 12px;
+    margin-left: 11%;
+    margin-top: 20px;
+}
+
+.navFooter a {
+    margin-right: 20px;
+    color: rgb(155, 155, 155);
+    text-decoration: none;
+    transition: .3s;
+}
+
+.navFooter a:hover{
+    color: rgb(194, 194, 194);
+}
+
+.container{
+    color: rgb(189, 189, 189);
+}
+
+/*Header*/
+
+.header{
+    width:100%;
+    height: 100px;
+    background-color: #160625;
+    
+}
+
+.nav{
+    margin-left: 130px;
+    padding-top: 35px;
+}
+
+.nav a{
+    display: inline-block;
+    font-size: 16px;
+    text-decoration: none;
+    color: rgb(218, 218, 218);
+    margin-left: 30px;
+    border: 2px transparent;
+    transition: .3s;
+}
+
+.nav a:hover{
+    border-bottom: 2px solid ;
+    color: #7e2ab6;
+    cursor: pointer;
+    text-shadow: /*0 0 0.2em hsl(0 0% 100% / 0.5),*/ 0 0 1em #7e2ab6;
+
+    /*box-shadow: 0 10px 1em -0.3em #7e2ab6;*/
+}
+
+#ghostLogo{
+    width: 125px;
+    height: 76px;
+    /*fill: linear-gradient(101.9deg, #6477DD 7.67%, #C753C1 52.66%, #DC1DC3 93.7%);*/
+    margin-top: 6px;
+
+}
+
+#heartIcon{
+    display: inline-block;
+    font-size: 16px;
+    color: rgb(218, 218, 218);
+    margin-left: 60px;
+    transition: .3s;
+}
+
+#heartIcon:hover{
+    color: #7e2ab6;
+    text-shadow:  0 0 1em #7e2ab6;
+    cursor: pointer;
+}
+
+#heartText{
+    display: inline-block;
+    margin-left: 10px;  
+}
+
+#cartIcon{
+    display: inline-block;
+    font-size: 16px;
+    color: rgb(218, 218, 218);
+    margin-left: 40px;
+    transition: .3s;
+}
+
+#cartIcon:hover{
+    color: #7e2ab6;
+    text-shadow:  0 0 1em #7e2ab6;
+    cursor: pointer;
+}
+
+
+.headContent{
+    display: flex;
+    margin-left: 8%;
+}
+
+.headerProf{
+    margin-left: 130px;
+    /*margin-left: 130px;*/
+    padding-top: 23px;
+}
+
+.headerProf a{
+    display: inline-block;
+    text-decoration: none;
+}
+
+#headImg{
+    border: 1px solid rgb(143, 143, 143); 
+    transition: .7s;
+}
+
+#headImg:hover{
+    border: 1px solid #915bc7; 
+}
+
+#userHeader{
+    color: rgb(189, 189, 189);
+    margin-left: 4px;
+    position: relative;
+    top: -25px;
+    transition: .4s;
+}
+
+#userHeader:hover{
+    color: #7e2ab6;
+    cursor: pointer;
+    text-shadow: 0 0 1em #7e2ab6;
+}
+
+#arrDownIcon{
+    font-size: 14px;
+    margin-left: 2px;
+}
+
+#headMoney{
+    display: block;
+    position: relative;
+    font-size: 11px;
+    left: 48px;
+    top: -15px;
+    color: rgb(163, 163, 163);
+    transition: .4s;
+}
+
+#headMoney:hover{
+    color: rgb(189, 189, 189);
+}
+
+#logout{
+    display: block;
+    position: relative;
+    color: rgb(163, 163, 163);
+    font-size: 10px;
+    left: 115px;
+    top: -29px;
+    transition: .4s;
+}
+
+#logout:hover{
+    cursor: pointer;
+    color: rgb(189, 189, 189);
+}
+
+.loginButtonH a{
+    display: inline-block;
+    text-decoration: none;
+    font-size: 14px;
+    border: 0px;
+    background: linear-gradient(101.9deg, #7273D9 7.67%, #B35BC7 52.66%, #D927C3 93.7%);
+    border-radius: 8px;
+    color: rgb(218, 218, 218);
+    width: 140px;
+    height: 40px;
+    text-align: center;
+    padding-top: 11px;
+    margin-left: 170px;
+    margin-top: 27px;
+    transition: .3s;
+}
+
+.loginButtonH a:hover{
+    text-shadow:  0 0 1em #7e2ab6;
+    box-shadow:  0 0 0.5em #7e2ab6;
+    color: rgb(235, 235, 235);
+}
+
+
+/*Library*/
+
+.rogue{
+    margin-left: 8%;
+}
+
+#libSpan{
+    display: block;
+    font-size: 30px;
+    color: #C6C6C6;
+    text-indent: 20px;
+    margin-top: 30px;
+}
+
+.libraryPublishTitle{
+    display: flex;
+}
+
+.heroesText{
+    position: relative;
+    margin-left: 55px;
+    top: 65px;
+    font-size: 13px ;
+}
+
+#heroLogoText{
+    margin-left: 280px;
+}
+
+.libContent{
+    display: flex;
+}
+
+.libContentG{
+    display: inline-block;
+    width: 550px;
+    min-height: 800px;
+    border-radius: 12px;
+    background-color: #293446;
+    margin-left: 15px;
+    margin-top: 30px;
+    
+}
+
+.libContentGIns{
+    margin-left: 15px;
+    margin-bottom: 20px;
+}
+
+.libContentInf{
+    
+    width: 680px;
+    height: 345px;
+    margin-top: 30px;
+    border-radius: 12px;
+    background-color: #2D2D2D;
+    overflow: hidden;
+
+    /*background: linear-gradient(to right, #293446 5%, #2D2D2D 10%);*/
+}
+
+#hero{
+    width: 720px;
+    height: 232px;
+    border-radius: 12px;
+}
+
+.gameLib{
+    display: inline-block;
+    width: 150px;
+    height: 225px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-left: 15px;
+    margin-top: 25px;
+    transition: .3s;
+    box-shadow: 0 0 10px  rgb(34, 34, 34);
+}
+
+.gameLib:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.gameLib img{
+    width: 150px;
+    height: 225px; /*161px default */
+    
+}
+
+
+#download{
+    display: inline-block;
+    width: 150px;
+    height: 38px;
+    margin-left: 25px;
+    position: relative;
+    top: -6px;
+    background-color: #7754ac;
+    color: rgb(218, 218, 218);
+    text-decoration: none;
+    border-radius: 8px;
+    text-indent: 32px;
+    padding-top: 9px;
+    transition: .3s;
+}
+
+#download:hover{
+    background-color: #8a67be;
+    color: rgb(224, 224, 224);
+}
+
+#libTitle{
+    display: inline-block;
+    font-size: 22px;
+    color: rgb(218, 218, 218);
+    margin-top: 25px;
+    margin-left: 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 220px;
+    overflow: hidden
+}
+
+#trophy{
+    
+    margin-left: 15px;
+    color: rgb(80, 80, 80);
+}
+
+#achievements{
+    display: inline-block;
+    font-size: 13px;
+    color: rgb(107, 107, 107);
+    position: absolute;
+    margin-top: 23px;
+    margin-left: 10px;
+}
+
+#achvBar{
+    display: inline-block;
+    width: 100px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: rgb(36, 36, 36);
+    position: absolute;
+    top: 48px;
+    margin-left: 10px;
+}
+
+#gamepad{
+    color: rgb(80, 80, 80);
+    position: absolute;
+    margin-left: 119px;
+    margin-top: 20px;
+    
+}
+
+.gameLibInf{
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+.gameLibSt input[type="file"], .gameLibTop input[type="file"] {
+    display: none;
+}
+
+#heroSt, #heroLogoSt{
+    width: 345px;
+    height: 232px;
+    border-radius: 12px;
+    transition: .3s;
+    opacity: 1;
+}
+
+#heroSt:hover, #heroLogoSt:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.gameLibSt{
+    display: inline-block;
+    width: 150px;
+    height: 225px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-left: 15px;
+    margin-top: 25px;
+    transition: .3s;
+    box-shadow: 0 0 10px  rgb(34, 34, 34);
+    opacity: 1;
+}
+
+.gameLibSt:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.gameLibSt img{
+    width: 150px;
+    height: 225px; /*161px default */
+    
+}
+
+.gameLibSt img:hover{
+    cursor: pointer;
+}
+
+.libContentGL{
+    display: inline-block;
+    width: 550px;
+    min-height: 300px;
+    border-radius: 12px;
+    background-color: #293446;
+    margin-left: 15px;
+    margin-top: 30px;
+    
+}
+
+#submitLibrary{
+    display: block;
+    width: 400px;
+    height: 50px;
+    border-radius: 12px;
+    border: 0px;
+    background-color: #7754ac;
+    color: rgb(216, 216, 216);
+    margin-left: 410px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    transition: .3s;
+    font-size: 16px;
+}
+
+#submitLibrary:hover{
+    background-color: #835fb9;
+    color: rgb(229, 229, 229);
+    cursor: pointer;
+}
+
+.siteIcon{
+    position: absolute;
+    margin-top: -210px;
+    margin-left: 180px;
+}
+
+
+.libraryImages{
+    display: flex;
+}

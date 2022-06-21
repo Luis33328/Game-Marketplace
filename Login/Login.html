@@ -18,24 +18,40 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+
     </head>
 
     <body class="bodyV2">
         <div class="container">
             <div class="header">
                 <div class="headContent">
-                    
+                    <a href="../index.html"><img id="ghostLogo" src="../home/img/logofinal.svg" /> </a>
+
 
                     <div class="nav">
-                        <a href="../index.html">Home</a>
-                        <a href="">Biblioteca</a>
-                        <a href="">Meu Perfil</a>
-                        <a href="">Sobre</a>
+                        <ul class="nav-links">
+                        
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../Library/library.html">Biblioteca</a></li>
+                            <li><a href="../Profile/profile.html">Meu Perfil</a></li>
+                            <li><a href="">Sobre</a></li>
 
-                        <i id="heartIcon" class="fa-regular fa-heart"><span id="heartText">Favoritos</span></i>
+                            <li><i id="heartIcon" class="fa-regular fa-heart"><span id="heartText">Favoritos</span></i></li>
 
-                        <i id="cartIcon" class="fa-solid fa-cart-shopping"></i>
+                            <li><i id="cartIcon" class="fa-solid fa-cart-shopping"></i></li>
+
+                            <div class="loginButtonH">
+                                <a href="login.html" >Login</a>
+                            </div>
+                        </ul>
+                        <div class="burger">
+                            <div class="line1"></div>
+                            <div class="line2"></div>
+                            <div class="line3"></div>
+                
+                        </div>
+
                     </div>
 
                     <!--<div class="headerProf">
@@ -45,9 +61,7 @@
                         <a id="headMoney" href="">R$ 00,00</a>
                     </div>-->
 
-                    <div class="loginButtonH">
-                        <a href="login.html" >Fazer Login</a>
-                    </div>
+                    
                 </div>
 
             </div>
@@ -55,7 +69,7 @@
 
             <div class="loginSpace">
                 <div class="loginLeft">
-                    <form method="POST" action="loginAuth.php">
+                    <form id="loginForm">
                         <div class="login">
 
                             <span id="loginText">Iniciar Sessão</span>
@@ -65,7 +79,7 @@
 
                             <a id="forgot" href="../ForgotPassword/ForgotPassword.html">Esqueci minha senha</a>
 
-                            <input id="button" type="submit" name="button" value="LOGIN" />
+                            <input id="button" type="button" name="button" value="LOGIN" onclick="valid()" />
 
                             <div class="newUser">
                                 <span id="newUserText">Não tem uma conta?</span>
@@ -80,5 +94,141 @@
                 </div>
             </div>
         </div>
+
+        <script>
+
+
+
+            const navSlide = () => {
+                const burger = document.querySelector('.burger');
+                const nav = document.querySelector('.nav-links');
+                const navLinks = document.querySelectorAll('.nav-links li');
+
+                burger.addEventListener('click',() => {
+                    //toggle nav
+                    nav.classList.toggle('nav-active');
+
+
+                    //animate links
+                    navLinks.forEach((link, index) =>{
+                        if(link.style.animation) {
+                            link.style.animation = '';
+                        } else {
+                            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                        }
+                    });
+
+                    //burger animation
+                    burger.classList.toggle('toggle');
+                    
+
+
+                });
+            }
+
+            navSlide();
+            function valid(){
+
+                //var data = $("#loginForm").serialize();
+
+                var user = document.getElementById("username").value;
+                var pass = document.getElementById("password").value;
+
+                
+
+                $.ajax({
+                    type: "POST",
+                    dataType: "json",
+                    data: {
+                        user: user
+                    },
+                    url: "getMail.php", 
+                    success: function(retorno){
+                        console.log(retorno);
+                        if(retorno.status == "error"){
+                            alert("Erro ao buscar por email.");
+                        }
+                        else{
+
+                            for(i = 0; i < retorno.length; i++){
+                                //alert(retorno[i].email);
+                                var email = retorno[i].email;
+
+                                //alert(email);
+
+
+                                chars = "";
+
+                                for(i = 12; i > 0; i--){
+                                    chars += email.charAt(i);
+                                }
+
+                                var passFinal = CryptoJS.SHA256(pass + chars).toString();
+
+                                var data = {
+                                    user: user,
+                                    pass: passFinal
+                                };
+
+                                var message = JSON.stringify(data).toString();
+
+                                var key = CryptoJS.enc.Utf8.parse('1564196849685165');
+                                //var iv = '4164149658496541';
+
+                                var iv = CryptoJS.lib.WordArray.random(128 / 16).toString();
+
+                                            
+
+                                var encrypted = CryptoJS.AES.encrypt(message, key, {
+                                    iv: CryptoJS.enc.Utf8.parse(iv),
+                                    mode: CryptoJS.mode.CBC,
+                                    padding: CryptoJS.pad.ZeroPadding
+                                });
+
+                            
+
+                                $.ajax({
+                                    type: "POST",
+                                    dataType: "json",
+                                    data: {
+                                        message: iv + encrypted.toString()
+                                    },
+                                    url: "loginAuth.php", 
+                                    success: function(retorno){
+                                        console.log(retorno);
+                                        if(retorno.status == "logged"){
+                                            location.href = "twoFactor.html";
+                                        }
+                                        else if(retorno.status == "incorrect"){
+                                            alert("Login e/ou senha incorretos");
+                                        }
+                                    },
+                                    error: function(err){
+                                        console.log(err);
+                                    }
+                                            
+                                });
+                            }
+                                            
+                        }
+                    },
+                    error: function(err){
+                        console.log(err);
+                    }
+                                            
+                });
+
+                
+            }
+
+
+            function getEmail(){
+
+                var user = document.getElementById("username").value;
+
+                
+            }
+            
+        </script>
     </body>
 </html>

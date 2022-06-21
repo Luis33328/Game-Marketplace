@@ -1,8 +1,18 @@
-/*Playstation Font*/
+font-face{
+    font-family: ps1;
+    src: url('../../assets/fonts/zrnic.ttf');
+}
+
+/*Retro Font*/
 
 @font-face{
-    font-family: ps1;
-    src: url('../fonts/zrnic.ttf');
+    font-family: retro;
+    src: url('../../assets/fonts/Retro.ttf');
+}
+
+@font-face{
+    font-family: big;
+    src: url('../../assets/fonts/BigPixel.ttf');
 }
 
 
@@ -10,26 +20,25 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
-    font-family: 'Roboto', sans-serif;
+    font-family: big;
 }
 
 body{
-    background: linear-gradient(to bottom,#365853 0.5%, #1E1E1E 70%);
-    
+    background-color: #160625;
     
 }
 
+/*Footer*/
 .footer{
     width: 100%;
     height: 30px;
     height: 100px;
     margin-top: 50px;
-    background-color: #1a1a1a;
+    background-color: #10041b;
 
 }
 
-/*Footer*/
+
 
 #rights{
     display: inline-block;
@@ -67,45 +76,53 @@ body{
 .header{
     width:100%;
     height: 100px;
-    background-color: #1E1E1E;
+    background-color: #160625;
     
 }
 
 .nav{
-    margin-left: 24%;
+    margin-left: 130px;
     padding-top: 35px;
 }
 
 .nav a{
     display: inline-block;
-    font-size: 18px;
+    font-size: 16px;
     text-decoration: none;
-    color: rgb(189, 189, 189);
-    margin-left: 55px;
+    color: rgb(218, 218, 218);
+    margin-left: 30px;
     border: 2px transparent;
     transition: .3s;
 }
 
 .nav a:hover{
     border-bottom: 2px solid ;
-    color: #21A894;
+    color: #7e2ab6;
+    cursor: pointer;
+    text-shadow: /*0 0 0.2em hsl(0 0% 100% / 0.5),*/ 0 0 1em #7e2ab6;
+
+    /*box-shadow: 0 10px 1em -0.3em #7e2ab6;*/
 }
 
 #ghostLogo{
-    width: 150px;
-    height: 84px;
+    width: 125px;
+    height: 76px;
+    /*fill: linear-gradient(101.9deg, #6477DD 7.67%, #C753C1 52.66%, #DC1DC3 93.7%);*/
+    margin-top: 6px;
+
 }
 
 #heartIcon{
     display: inline-block;
-    font-size: 18px;
-    color: rgb(189, 189, 189);
-    margin-left: 90px;
+    font-size: 16px;
+    color: rgb(218, 218, 218);
+    margin-left: 60px;
     transition: .3s;
 }
 
 #heartIcon:hover{
-    color: #21A894;
+    color: #7e2ab6;
+    text-shadow:  0 0 1em #7e2ab6;
     cursor: pointer;
 }
 
@@ -116,20 +133,23 @@ body{
 
 #cartIcon{
     display: inline-block;
-    font-size: 18px;
-    color: rgb(189, 189, 189);
-    margin-left: 80px;
+    font-size: 16px;
+    color: rgb(218, 218, 218);
+    margin-left: 40px;
     transition: .3s;
 }
 
 #cartIcon:hover{
-    color: #21A894;
+    color: #7e2ab6;
+    text-shadow:  0 0 1em #7e2ab6;
     cursor: pointer;
 }
 
 
+
 .headContent{
     display: flex;
+    margin-left: 8%;
 }
 
 .headerProf{
@@ -148,7 +168,7 @@ body{
 }
 
 #headImg:hover{
-    border: 1px solid #47867c; 
+    border: 1px solid #915bc7; 
 }
 
 #userHeader{
@@ -160,7 +180,9 @@ body{
 }
 
 #userHeader:hover{
-    color: #47867c;
+    color: #7e2ab6;
+    cursor: pointer;
+    text-shadow: 0 0 1em #7e2ab6;
 }
 
 #arrDownIcon{
@@ -169,9 +191,11 @@ body{
 }
 
 #headMoney{
+    display: block;
     position: relative;
-    font-size: 14px;
-    left: -74px;
+    font-size: 11px;
+    left: 48px;
+    top: -15px;
     color: rgb(163, 163, 163);
     transition: .4s;
 }
@@ -180,25 +204,44 @@ body{
     color: rgb(189, 189, 189);
 }
 
+#logout{
+    display: block;
+    position: relative;
+    color: rgb(163, 163, 163);
+    font-size: 10px;
+    left: 115px;
+    top: -29px;
+    transition: .4s;
+}
+
+#logout:hover{
+    cursor: pointer;
+    color: rgb(189, 189, 189);
+}
+
 .loginButtonH a{
     display: inline-block;
     text-decoration: none;
-    border: 3px solid #1a7e6f;
+    font-size: 14px;
+    border: 0px;
+    background: linear-gradient(101.9deg, #7273D9 7.67%, #B35BC7 52.66%, #D927C3 93.7%);
     border-radius: 8px;
-    color: rgb(163, 163, 163);
-    width: 130px;
+    color: rgb(218, 218, 218);
+    width: 140px;
     height: 40px;
     text-align: center;
-    padding-top: 7px;
-    margin-left: 75px;
-    margin-top: 24px;
+    padding-top: 11px;
+    margin-left: 170px;
+    margin-top: 27px;
     transition: .3s;
 }
 
 .loginButtonH a:hover{
-    border: 3px solid #1e9281;
-    color: rgb(189, 189, 189);
+    text-shadow:  0 0 1em #7e2ab6;
+    box-shadow:  0 0 0.5em #7e2ab6;
+    color: rgb(235, 235, 235);
 }
+
 
 .bodyV2{
     background: radial-gradient(to bottom,#365853 0.5%, #1E1E1E 70%);
@@ -261,7 +304,7 @@ body{
     display: block;
     width: 300px;
     height: 43px;
-    background-color: #47867c;
+    background: linear-gradient(101.9deg, #7273D9 7.67%, #B35BC7 52.66%, #D927C3 93.7%);
     border-radius: 6px;
     border: 0;
     margin-top: 30px;
@@ -301,31 +344,37 @@ body{
 
     /*Header*/
     .nav{
-        margin-left: 20%;
+        margin-left: 5%;
     }
 
     .nav a {
         font-size: 16px;
-        margin-left: 45px;
+        margin-left: 10px;
     }
 
     #heartIcon{
         font-size: 16px;
-        margin-left: 70px;
+        margin-left: 20px;
     }
 
     #cartIcon{
         font-size: 16px;
-        margin-left: 60px;
+        margin-left: 15px;
     }
 }
+
+
 
 
 @media screen and (max-width: 1200px) {
 
     /*Header*/
     .nav{
-        margin-left: 10%;
+        margin-left: 2%;
+    }
+
+    .loginButtonH{
+        margin-left: -50px;
     }
 
      /*Login*/
@@ -339,7 +388,21 @@ body{
     }
 }
 
-@media screen and (max-width: 1000px) {
+
+@media screen and (max-width: 1100px) {
+
+    /*Header*/
+
+    .nav{
+        margin-left: 1%;
+    }
+
+    .loginButtonH{
+        margin-left: -80px;
+    }
+}
+
+@media screen and (max-width: 1030px) {
 
     /*Header*/
 
@@ -354,15 +417,29 @@ body{
     .loginButtonH{
         display: none;
     }
-    
+
+
+    .headContent{
+        margin-left: 44%;
+    }
+
+
     /*Login*/
 
     .loginSpace{
-       display: block;
-    }
+        display: block;
+     }
 }
 
+
 @media screen and (max-width: 600px){
+
+    /*Header*/
+
+    .headContent{
+        margin-left: 38%;
+    }
+
     /*Login*/
 
     .login{

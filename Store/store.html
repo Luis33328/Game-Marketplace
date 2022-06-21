@@ -1,0 +1,438 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Meu Perfil</title>
+
+        <script src="https://kit.fontawesome.com/50d53b2eac.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/style.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="header">
+                <div class="headContent">
+                    <a href="../index.html"><img id="ghostLogo" src="../home/img/logofinal.svg" /> </a>                
+
+                    <div class="nav">
+                        <a href="../index.html">Home</a>
+                        <a href="../Library/library.html">Biblioteca</a>
+                        <a href="../Profile/profile.html">Meu Perfil</a>
+                        <a href="">Sobre</a>
+
+                        <i id="heartIcon" class="fa-regular fa-heart"><span id="heartText">Favoritos</span></i>
+
+                        <i id="cartIcon" class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                        
+                    
+                </div>
+
+            </div>
+
+            <form id="pStoreForm">
+                <div class="gameInformation1">
+                    
+                    
+                </div>
+                
+                <div class="storeMid">
+                    
+                    
+
+                </div>
+            </form>
+
+        <div class="footer">
+            <div class="footInf">
+                <span id="rights">
+                    © 2022 . Todos os direitos reservados. Todas as marcas comerciais são propriedade dos respectivos proprietários nos E.U.A. e outros países.
+            IVA incluído em todos os preços onde aplicável.
+                </span>
+            </div>
+            
+            <div class="navFooter">
+                <a href="">Sobre a empresa</a>
+                <a href="">Trabalhe conosco</a>
+                <a href="">Vale Presentes</a>
+                <a href="">Política de privacidade</a>
+            </div>
+        </div>
+
+
+        <script>
+
+        logged = false;
+
+        $(document).ready(function(){
+
+            validSession();
+            getGame();
+            
+
+        });
+
+        var slideIndex = 1;
+        
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" activeSt", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " activeSt";
+        }
+
+        
+        function getTextStore(){
+            if(logged == true){
+                f = document.querySelector("#titl");
+                d = document.querySelector("#headMoney");
+                e = document.querySelector("#storePrice");
+                theText = e.innerHTML;
+                theText = theText.replace("R$", '');
+                theText = theText.replace(/,/g, '.');
+
+                theText2 = d.innerHTML;
+                theText2 = theText2.replace("R$ ", '');
+                //theText2 = theText2.replace(',', '.');
+
+                theText3 = f.innerHTML;
+
+                
+
+                //document.getElementById("buyValue").value = parseFloat(theText);
+                //document.getElementById("currentCash").value = parseFloat(theText2);
+                //document.getElementById("buyGameTitle").value = theText3;
+
+                price = parseFloat(theText);
+                currency = parseFloat(theText2);
+                title = theText3;
+
+                $.ajax({
+                    type: "POST",
+                    dataType: "json",
+                    data: {
+                        price: price,
+                        currency: currency,
+                        title: title 
+                    },
+                    url: "buyGame.php", 
+                    success: function(retorno){
+                        if(retorno.status == "rich"){
+
+                            location.href = "../Library/library.html";
+                        }
+                        else{
+                            location.href = "../Cash/cash.html";
+                        }
+                    },
+                    error: function(err){
+                        console.log(err);
+                    }
+                    
+                }); 
+            }
+            else{
+                location.href = "../Login/Login.html"
+            }
+        }
+
+
+        function checkPos(){          
+
+            $.ajax({
+                    type: "GET",
+                    dataType: "json",
+                    url: "checkPos.php", 
+                    success: function(retorno){
+                        buy = document.querySelector(".buyButtonS");
+
+                        content = "";
+
+                        if(retorno.status == "same"){
+                            
+                            content += '<a id="jogar" href="../Library/library.html">Jogar</a>';
+
+                            buy.innerHTML += content;
+                        }
+                        else{
+                            for(i = 0; i<retorno.length; i++){
+                                content += '<a onclick="getTextStore()">Comprar Agora</a>';
+                                content += '<span id="storePrice">R$' + retorno[i].price + '</span>';
+
+                                buy.innerHTML += content;
+                            }
+                        }
+                    },
+                    error: function(err){
+                        console.log(err);
+                    }
+                    
+                }); 
+
+        }
+
+            function getGame (){
+                $.ajax({
+                        type: "GET",
+                        dataType: "json",
+                        //data: data,
+                        url: "gameSession.php", 
+                        success: function(retorno){
+                            console.log(retorno);
+                            game = document.querySelector(".gameInformation1");
+                            mid = document.querySelector(".storeMid");
+
+                            content = "";
+                            contentMid = "";
+
+                            for(i = 0; i < retorno.length; i++){
+                                content+= '<span class="title" id="titl">' + retorno[i].title + '</span>';
+                                content+= '<div class="storeTop">';
+                                content+= '<div class="storeLeft">';
+                                content+= '<div class="slideshow-container">';
+
+                                content+= '<div class="mySlides fadeSt">';
+                                content+= '<img class="storeImgB" src="../uploads/' + retorno[i].storeImg1 +'" />';
+                                content+= '</div>';
+                                content+= '<div class="mySlides fadeSt">';
+                                content+= '<img class="storeImgB" src="../uploads/' + retorno[i].storeImg2 +'" />';
+                                content+= '</div>';
+                                content+= '<div class="mySlides fadeSt">';
+                                content+= '<img class="storeImgB" src="../uploads/' + retorno[i].storeImg3 +'" />';
+                                content+= '</div>';
+                                content+= '<div class="mySlides fadeSt">';
+                                content+= '<img class="storeImgB" src="../uploads/' + retorno[i].storeImg4 +'" />';
+                                content+= '</div>';
+                                content+= '<div class="mySlides fadeSt">';
+                                content+= '<img class="storeImgB" src="../uploads/' + retorno[i].storeImg5 +'" />';
+                                content+= '</div>';
+
+                                content+= '<a class="prev" onclick="plusSlides(-1)">&#10094;</a>';
+                                content+= '<a class="next" onclick="plusSlides(1)">&#10095;</a>';
+                                content+= '</div>';
+                                content+= '<br>';
+                                content+= '<div class="dwnImages">';
+                                content+= '<img src="../uploads/' + retorno[i].storeImg1 + '" class="dot" onclick="currentSlide(1)"></span>';
+                                content+= '<img src="../uploads/' + retorno[i].storeImg2 + '" class="dot" onclick="currentSlide(2)"></span>';
+                                content+= '<img src="../uploads/' + retorno[i].storeImg3 + '" class="dot" onclick="currentSlide(3)"></span>';
+                                content+= '<img src="../uploads/' + retorno[i].storeImg4 + '" class="dot" onclick="currentSlide(4)"></span>';
+                                content+= '<img src="../uploads/' + retorno[i].storeImg5 + '" class="dot" onclick="currentSlide(5)"></span>';
+                                content+= '</div>';
+                                content+= '</div>';
+                                content+= '<div class="storeRight">';
+                                content+= '<img id="storeImg2" src="../uploads/' + retorno[i].image + '" />';
+                                content+= '<p><span id="gameSummary" style="white-space: pre-wrap;">' + retorno[i].brief_description + '</span></p>';
+                                content+= '<span id="launchDate">Data de Lançamento: <span id="devNameHighlight">' + retorno[i].launch_date + '</span></span>';
+                                content+= '<span id="devName">Developer: <span id="devNameHighlight">' + retorno[i].developer + '</span></span>';
+                                content+= '<div class="storeTags">';
+                                content+= '<span>' + retorno[i].tag1 + '</span>';
+                                content+= '<span>' + retorno[i].tag2 + '</span>';
+                                content+= '<span>' + retorno[i].tag3 + '</span>';
+                                content+= '<span>' + retorno[i].tag4 + '</span>';
+                                content+= '</div>';
+                                content+= '</div>';
+                                content+= '</div>';
+
+                                contentMid += '<div class="midLeft">';
+                                contentMid += '<div class="gameInformation2">';
+                                contentMid += '<div class="gameAbout">';
+                                contentMid += '<h2>SOBRE O JOGO</h2>';
+                                contentMid += '<p><span id="furtherDetails" style="white-space: pre-wrap;" >' + retorno[i].about + '</span></p>';
+                                contentMid += '</div>';
+                                contentMid += '</div>';
+                                contentMid += '<div class="buyGame">';
+                                contentMid += '<form>';
+                                contentMid += '<input type="hidden" name="buyValue" id="buyValue" value="" />';
+                                contentMid += '<input type="hidden" name="currentCash" id="currentCash" value="" />';
+                                contentMid += '<input type="hidden" name="buyGameTitle" id="buyGameTitle" value="" />';
+                                contentMid += '<span id="buyName">Comprar Jogo</span>';
+                                contentMid += '<div class="buyButtonS"'
+                                contentMid += '</div>';
+                                contentMid += '</form>';
+                                contentMid += '</div>';
+                                contentMid += '</div>';
+                                contentMid += '</div>';
+                                contentMid += '<div class="reviews">';
+                                contentMid += '<h2>ANÁLISES</h2>';
+                                contentMid += '</div>';
+
+                            }
+
+
+                            game.innerHTML += content;
+                            mid.innerHTML += contentMid;
+                            showSlides(slideIndex);
+
+                            checkPos();
+                            
+                        },
+                        error: function(err){
+                            console.log(err);
+                            
+                        }
+                        
+                });
+            
+            }
+
+
+            function upload(){
+
+                var data = $("#pStoreForm").serialize();
+
+                var frm = $('#pStoreForm');
+                var formData = new FormData(frm[0]);
+                formData.append('title', document.querySelector(".title").innerHTML);
+                formData.append('image1', document.getElementById("dwnImg1").files[0]);
+                formData.append('image2', document.getElementById("dwnImg2").files[0]);
+                formData.append('image3', document.getElementById("dwnImg3").files[0]);
+                formData.append('image4', document.getElementById("dwnImg4").files[0]);
+                formData.append('image5', document.getElementById("dwnImg5").files[0]);
+                
+                //alert(document.getElementById("gameImage").files[0]);
+                //formData.append('gameFile', $('input[type=file]')[1].files[0]);
+                //alert(formData.get(0));
+
+                //alert(formData);
+
+                $.ajax({
+                    type: "POST",
+                    enctype: 'multipart/form-data',
+                    dataType: "json",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    url: "publishStore.php", 
+                    success: function(retorno){
+                        console.log(retorno);
+                        if(retorno.status == "sent"){
+                            location.href = "publishLibrary.html";
+                            
+                        }
+                        else{
+                            alert("Ocorreu um erro ao finalizar a página da loja.");
+                        }
+                    },
+                    error: function(err){
+                        console.log(err);
+                    }
+                    
+                }); 
+                }
+
+            
+
+            function validSession(){
+
+                $.ajax({
+                        type: "GET",
+                        dataType: "json",
+                        //data: data,
+                        url: "../validSession.php", 
+                        success: function(retorno){
+                            console.log(retorno);
+                            header = document.querySelector(".headContent");
+                            profile = document.querySelector(".content");
+
+                            content = "";
+
+                            contentProf = "";
+
+                            if(retorno.logged == "false"){
+                            
+                                content += '<div class="loginButtonH">';
+                                content += '<a href="../Login/Login.html" >Login</a>';
+                                content += '</div>';
+
+                                header.innerHTML += content;
+
+                            }
+                            else{
+                                logged = true;
+                                for(i = 0; i < retorno.length; i++){
+                                    content += '<div class="headerProf">';
+                                    if(retorno[i].profile_image){
+                                        content += '<a href="profile.html" id="headImg"><image src="../uploads/' + retorno[i].profile_image + '" width="40" height="40"></image></a>';
+                                    }
+                                    else{
+                                        content += '<a href="profile.html" id="headImg"><image src="../home/img/iconBig.png" width="40" height="40"></image></a>';
+                                    }
+                                    
+                                    content += '<a id="userHeader" href="profile.html">' + retorno[i].username + '<i id="arrDownIcon" class="fa-solid fa-angle-down"></i></a>';
+                                    content += '<a id="headMoney" href="../Cash/cash.html">R$ ' + retorno[i].cash + '</a>';
+                                    content += '<a id="logout" onclick="logout()">Sair</a>';
+                                    content += '</div>'
+
+                                }
+
+                                header.innerHTML += content;
+
+                            }
+                        },
+                        error: function(err){
+                            console.log(err);
+                            
+                        }
+                        
+                });
+            }
+
+            function logout(){
+                $.ajax({
+                        type: "GET",
+                        dataType: "json",
+                        //data: data,
+                        url: "../logout.php", 
+                        success: function(retorno){
+                            console.log(retorno);
+
+                            if(retorno.logged == "false"){
+                                location.href = "../index.html";
+                            }
+                        
+                        },
+                        error: function(err){
+                            console.log(err);
+                            
+                        }
+                        
+                });
+            }
+
+        </script>
+    </body>
+</html>

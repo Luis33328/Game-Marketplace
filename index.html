@@ -13,6 +13,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap" rel="stylesheet">
 
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -27,111 +28,45 @@
         <div class="container">
             <div class="header">
                 <div class="headContent">
-                    
+                    <a href=""><img id="ghostLogo" src="home/img/logofinal.svg" /> </a>
                     <div class="nav">
-
-                        <div class="logo">
-                            <h4>The Nav</h4>
-                        </div>
-                        
                         <ul class="nav-links">
-                            <li>
-                                <a href="#">Home</a>
-                            </li>
-                            
-                            <li>
-                                <a href="#">Biblioteca</a>
-                            </li>
-                
-                            <li>
-                                <a href="#">Meu Perfil</a>
-                            </li>
-                
-                            <li>
-                                <a href="#">Sobre</a>
-                            </li>
-                
-                            <li>
-                                <i id="heartIcon" class="fa-regular fa-heart"><span id="heartText">Favoritos</span></i>
-                            </li>
-                
-                            <li>
-                                <i id="cartIcon" class="fa-solid fa-cart-shopping"></i>
-                            </li>
+                        
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="Library/library.html">Biblioteca</a></li>
+                            <li><a href="Profile/profile.html">Meu Perfil</a></li>
+                            <li><a href="">Sobre</a></li>
 
-                            <li>
-                                <a class="loginButtonH" href="Login/Login.html" >Fazer Login</a>
-                            </li>
+                            <li><i id="heartIcon" class="fa-regular fa-heart"><span id="heartText">Favoritos</span></i></li>
+
+                            <li><i id="cartIcon" class="fa-solid fa-cart-shopping"></i></li>
                         </ul>
-                
                         <div class="burger">
                             <div class="line1"></div>
                             <div class="line2"></div>
                             <div class="line3"></div>
                 
                         </div>
+
                     </div>
-                
-
-
-
-                    <!--<div class="headerProf">
-                        <a href="" id="headImg"><image src="public/images/iconBig.png" width="40" height="40"></image></a>
-                        <a id="userHeader" href="">Usuario <i id="arrDownIcon" class="fa-solid fa-angle-down"></i></a>
-
-                        <a id="headMoney" href="">R$ 00,00</a>
-                    </div>-->
-
                 </div>
-
             </div>
 
 
             <div class="highlights">
-                <a href="">
-                    <div class="highlight fadeSt">
-                        <image class="highImage" src="Home/img/RE2_hero_small.png" width="100%"></image>
-                    </div>
-                </a>
-
-                <a href="">
-                    <div class="highlight fadeSt">
-                        <image class="highImage" src="Home/img/stardew_hero_small.png" width="100%"></image>
-                    </div>
-                </a>
-
-                <a href="">
-                    <div class="highlight fadeSt">
-                        <image class="highImage" src="Home/img/cuphead_hero._small.png" width="100%"></image>
-                    </div>
-                </a>
-
-                <a href="">
-                    <div class="highlight fadeSt">
-                        <image class="highImage" src="Home/img/maigo_hero_small.png" width="100%"></image>
-                    </div>
-                </a>
-
-                <a href="">
-                    <div class="highlight fadeSt">
-                        <image class="highImage" src="Home/img/stanley_logo_small.png" width="100%"></image>
-                    </div>
-                </a>
-
-                <div class="highDotsDiv">
-                    <span class="highDots" ></span>
-                    <span class="highDots" ></span>
-                    <span class="highDots" ></span>
-                    <span class="highDots" ></span>
-                    <span class="highDots" ></span>
-                </div>
 
                 <!--<a class="prevHigh" onclick="plusSlidesHigh(-1)">&#10094;</a>
                 <a class="nextHigh" onclick="plusSlidesHigh(1)">&#10095;</a>-->
             </div>
 
-            
-
+            <div class="search">
+                <div class="searchGame">
+                    <form>
+                        <input type="text" name="searchText" id="searchText" placeholder="Buscar" autocomplete="off" />
+                        <a onclick="searchG()" id="magGlass"><i class="fas fa-search fa-lg" id="glassIcon"></i></a>
+                    </form>   
+                </div>
+            </div>
 
             <div class="publishers">
                 <div class="publ1">
@@ -181,91 +116,8 @@
             <div class="promos">
                 <span id="saleText">Promoções</span>
 
-                <div class="sale1">
-                    <div class="saleImageD">
-                        <a href="">
-                            <image id="saleImage" src="Home/img/RE2_H.jpg" width="460" height="215">
-                                <span id="discountBanner">50%</span>
-                            </image>
-                        </a>
-                        
-                    </div>
+                <div class="promoDivs">
 
-                    <div class="expand">
-                        <i id="angleRightIcon" class="fa-solid fa-angle-right"></i>
-                    </div>
-                    
-                    <div class="saleContent">
-                        <div class="saleRight">
-                            <a id="saleTitle" href="">Resident Evil 2</a>
-                            <div class="tags">
-                                <span class="tag">Zombies</span>
-                                <span class="tag">Terror</span>
-                                <span class="tag">Remake</span>
-                            </div>
-
-                            <div class="platforms">
-                                <i class="fa-brands fa-windows"></i>
-                                <i class="fa-brands fa-apple"></i>
-                            </div>
-
-                            <div class="buySection">
-                                <span id="discount">-50% 
-                                    <div class="buyButtonPromo">
-                                        <div class="buyButtonContent">
-                                            <span id="oldPrice">R$98,90</span>
-                                            <span id="discPrice">R$49,95</span>
-                                        </div>
-                                        
-                                    </div>
-                                </span>
-                                    
-                            </div>
-                        </div>
-
-                        <div class="saleLeft">
-
-                            <div class="slideshow-container">
-
-                                <!-- Full-width images with number and caption text -->
-                                <div class="mySlides fadeSt">
-                                    <img class="storeImgB" src="Home/img/re2Img1.jpg" width="300" height="168" />
-                    
-                                </div>
-                    
-                                <div class="mySlides fadeSt">
-                                    <img class="storeImgB" src="Home/img/re2Img2.jpg" width="300" height="168" />
-                    
-                                </div>
-                    
-                                <div class="mySlides fadeSt">
-                                    <img class="storeImgB" src="Home/img/re2Img3.jpg" width="300" height="168" />
-                    
-                                </div>
-
-                                <div class="mySlides fadeSt">
-                                    <img class="storeImgB" src="Home/img/re2Img4.jpg" width="300" height="168" />
-                    
-                                </div>
-                    
-                                <div class="mySlides fadeSt">
-                                    <img class="storeImgB" src="Home/img/re2Img5.jpg" width="300" height="168" />
-                    
-                                </div>
-                    
-                            </div>
-
-                            <div class="dots">
-                                <span class="dot" ></span>
-                                <span class="dot" ></span>
-                                <span class="dot" ></span>
-                                <span class="dot" ></span>
-                                <span class="dot" ></span>
-                            </div>
-
-                        </div>
-                        
-                    </div>
                 </div>
 
                 
@@ -275,142 +127,14 @@
             <div class="forYou">
                 <span id="forYouText">Recomendações</span>
 
-                <div class="recGame fadeSt">
-                    <a href="" id="recImg">
-                        <img class="fyImg" src="Home/img/pWinter_H.jpg"height="305" width="575"  />
-                    </a>
-
-                    <div class="forYouContent">
-                        <a href="" id="recTitle">Project Winter</a>
-                        <div class="recTags">
-                            <span class="tag">Multiplayer</span>
-                            <span class="tag">Survival</span>
-                            <span class="tag">PvP</span>
-                        </div>
-
-                        <div class="Platforms">
-                            <i class="fa-brands fa-windows"></i>
-                            <i class="fa-brands fa-apple"></i>
-                        </div>
-
-                        <span id="recBuy">R$37,99</span>
-                    </div>
-
-
-                </div>
-
-                <div class="recGame fadeSt">
-                    <a href="" id="recImg">
-                        <img class="fyImg" src="Home/img/RE3_h.jpg"height="305" width="575"  />
-                    </a>
-
-                    <div class="forYouContent">
-                        <a href="" id="recTitle">Resident Evil 3</a>
-                        <div class="recTags">
-                            <span class="tag">Zombies</span>
-                            <span class="tag">Terror</span>
-                            <span class="tag">Remake</span>
-                        </div>
-
-                        <div class="Platforms">
-                            <i class="fa-brands fa-windows"></i>
-                            <i class="fa-brands fa-apple"></i>
-                        </div>
-
-                        <span id="recBuy">R$129,99</span>
-                    </div>
-
-
-                </div>
-
-                <div class="recGame fadeSt">
-                    <a href="" id="recImg">
-                        <img class="fyImg" src="Home/img/RE2_h.jpg"height="305" width="575"  />
-                    </a>
-
-                    <div class="forYouContent">
-                        <a href="" id="recTitle">Resident Evil 2</a>
-                        <div class="recTags">
-                            <span class="tag">Zombies</span>
-                            <span class="tag">Terror</span>
-                            <span class="tag">Remake</span>
-                        </div>
-
-                        <div class="Platforms">
-                            <i class="fa-brands fa-windows"></i>
-                            <i class="fa-brands fa-apple"></i>
-                        </div>
-
-                        <span id="recBuy">R$98,90</span>
-                    </div>
-
-    
-
-                </div>
-
                 
-
-                <div class="recGame fadeSt">
-                    <a href="" id="recImg">
-                        <img class="fyImg" src="Home/img/nightDelivery_H.jpg"height="305" width="575"  />
-                    </a>
-
-                    <div class="forYouContent">
-                        <a href="" id="recTitle">Night Delivery | 例外配達</a>
-                        <div class="recTags">
-                            <span class="tag">Indie</span>
-                            <span class="tag">Terror</span>
-                            <span class="tag">Atmosférico</span>
-                        </div>
-
-                        <div class="Platforms">
-                            <i class="fa-brands fa-windows"></i>
-                            <i class="fa-brands fa-apple"></i>
-                        </div>
-
-                        <span id="recBuy">R$6,99</span>
-                    </div>
-
-                    
-                </div>
-
-                <div class="recGame fadeSt">
-                    <a href="" id="recImg">
-                        <img class="fyImg" src="Home/img/sekiro_H.jpg"height="305" width="575"  />
-                    </a>
-
-                    <div class="forYouContent">
-                        <a href="" id="recTitle">Sekiro: Shadows Die Twice</a>
-                        <div class="recTags">
-                            <span class="tag">Difícil</span>
-                            <span class="tag">História</span>
-                            <span class="tag">Souls-Like</span>
-                        </div>
-
-                        <div class="Platforms">
-                            <i class="fa-brands fa-windows"></i>
-                            <i class="fa-brands fa-apple"></i>
-                        </div>
-
-                        <span id="recBuy">R$199,90</span>
-                    </div>
-
-                </div>
-
-
-                <div class="recDotsDiv">
-                    <span class="recDots" ></span>
-                    <span class="recDots" ></span>
-                    <span class="recDots" ></span>
-                    <span class="recDots" ></span>
-                    <span class="recDots" ></span>
-                </div>
-
-                <a class="prev" onclick="plusSlidesRec(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlidesRec(1)">&#10095;</a>
             </div>
             
-            
+
+            <div class="newGames">
+                <span  id="nov">Novidades</span>
+
+            </div>
             
         </div>
 
@@ -430,9 +154,543 @@
             </div>
         </div>
 
-        <script src="Home/js/script.js"></script>
+        <script>
+            
+            $(document).ready(function(){
+                getGames();
+                newGames();
+                admin();
+                validSession();
+                
+                
+                
+            });
 
-  
+
+            const navSlide = () => {
+                const burger = document.querySelector('.burger');
+                const nav = document.querySelector('.nav-links');
+                const navLinks = document.querySelectorAll('.nav-links li');
+
+                burger.addEventListener('click',() => {
+                    //toggle nav
+                    nav.classList.toggle('nav-active');
+
+
+                    //animate links
+                    navLinks.forEach((link, index) =>{
+                        if(link.style.animation) {
+                            link.style.animation = '';
+                        } else {
+                            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                        }
+                    });
+
+                    //burger animation
+                    burger.classList.toggle('toggle');
+                    
+
+
+                });
+            }
+
+            navSlide();
+
+            
+
+            var slideIndex = {val: 1}; 
+            var recSlideIndex = {val: 1}; 
+            var highSlideIndex = {val: 1};
+
+            var flag = false;
+
+            //alert(highSlideIndex[0]);
+            
+            /*function changeSlide(n){
+                showSlides(slideIndex.val += n, "mySlides", "dot", slideIndex);
+                showSlides(highSlideIndex.val += n, "highlight", "highDots", highSlideIndex);
+                //alert(highSlideIndex);
+            }*/
+
+            
+            function changeSlide(n, indexVal, name, dotName, index){
+                showSlides(indexVal.val += n, name, dotName, index);
+            }
+
+            
+            //showSlides(slideIndex.val, "mySlides", "dot", slideIndex);
+
+            setInterval(function() {changeSlide(1, highSlideIndex, "highlight", "highDots", highSlideIndex)}, 5000);
+            //setInterval(function() {changeSlide(1, slideIndex, "mySlides", "dot", slideIndex)}, 4000);
+            
+            
+            
+
+            // Controles do carousel
+            function plusSlidesHigh(n) {
+                showSlides(highSlideIndex.val += n, "highlight", "highDots", highSlideIndex);
+            }
+
+            function plusSlidesRec(n){
+                showSlides(recSlideIndex.val += n, "recGame", "recDots", recSlideIndex);
+            }
+            
+            
+            function showSlides(n, name, dotName, index) {
+                //alert(index );
+
+                var i;
+                var slides = document.getElementsByClassName(name);
+                var dots = document.getElementsByClassName(dotName);
+                if (n > slides.length) { index.val = 1 }
+                if (n < 1) { index.val = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" activeSt", "");
+                }
+
+                if(name == "recGame"){
+                    slides[index.val - 1].style.display = "flex";
+                }
+                else{
+                    slides[index.val - 1].style.display = "block";
+                }
+                
+                dots[index.val - 1].className += " activeSt";
+            }
+
+            var saleDiv = document.querySelector('.sale1');
+            var saleContent = document.querySelector('.saleContent');
+            var expand = document.querySelector('.expand');
+
+            var show = false;
+            var hasShowed = 0;
+            var reset = false;
+
+
+            //Checar o tamanho da tela
+            /*$(window).on("mousemove", function() {
+                if ($(window).width() <= 1200){
+                    flag = true;
+                } else {
+                    flag = false;
+                }
+            })*/
+
+            
+
+            /*function validAuth(e){
+                //alert(e.innerHTML);
+                $.ajax({
+                    type: 'POST',
+                    url: 'checkAuthorization.php',
+                    async:true,
+                    data: {
+                        'element': e.innerHTML
+                    },
+                    dataType: 'json',
+                    success: function(data){
+                        console.log("ok");
+                    },
+                    error: function(){
+                        console.log("aff");
+                    }
+
+                });
+                
+            }*/
+
+            function getText(id){
+                e = document.querySelector(id);
+                theText = e.innerHTML;
+
+                document.getElementById("gameNameInput").value = theText;
+            }
+
+            function store(){
+
+                window.onclick = e => {
+                    //alert(e.target);  // to get the element
+                    //alert(e.target.tagName);  // to get the element tag name alone
+                    var input = $(e.target).closest("#buyS").find("input"); 
+                    var title = input.val();
+
+                    //alert(title);
+
+                    $.ajax({
+                        type: "POST",
+                        dataType: "json",
+                        data: {
+                             title: title
+                        },
+                        url: "store.php", 
+                        success: function(retorno){
+                            console.log(retorno);
+                            if(retorno.status == "ok"){
+                                //alert(retorno.status);
+                                location.href = "Store/store.html";
+                            }
+                            else{
+                                alert("erro.");
+                            }
+                        },  
+                        error: function(err){
+                            console.log(err);
+                            
+                        }
+
+                    });
+                } 
+
+                //var form = $(this.form).id; 
+                
+
+                //var data = $(form).serialize();
+                //alert(form);
+                //alert(data);
+
+                
+            }
+
+            function searchG(){
+
+                data = $("#searchText").serialize();
+
+                $.ajax({
+                        type: "POST",
+                        dataType: "json",
+                        data: data,
+                        url: "search.php", 
+                        success: function(retorno){
+                            console.log(retorno);
+                            if(retorno.status == "ok"){
+                                //alert(retorno.status);
+                                location.href = "Search/search.html";
+                            }
+                            else{
+                                alert("erro.");
+                            }
+                        },  
+                        error: function(err){
+                            console.log(err);
+                            
+                        }
+
+                });
+            }
+
+
+            function getGames(){
+                $.ajax({
+                        type: "GET",
+                        dataType: "json",
+                        //data: data,
+                        url: "getGames.php", 
+                        success: function(retorno){
+                            console.log(retorno);
+                            header = document.querySelector(".highlights");
+                            promo = document.querySelector(".promoDivs");
+                            rec = document.querySelector(".forYou");
+
+                            content = "";
+                            contentDot = "";
+                            contentPromo = "";
+                            contentRec = "";
+                            contentRecDot = "";
+
+                            contentDot +=' <div class="highDotsDiv">';
+                            contentRecDot +=' <div class="recDotsDiv">';
+
+                            for(j = 2; j < 11; j++){
+                                    
+                                    content += '<div class="highlight fadeSt" id="buyS">';
+                                    content += '<form>'
+                                    content += '<input type="hidden" name="game1" id="gameNameInput" value="' + retorno[j].title + '" />'
+                                    content += '<image class="highImage" src="uploads/' + retorno[j].heroImg +'" width="100%"></image>'
+                                    content += '<div class="highContent">'
+                                    content += '<span class="highDescT">'  + retorno[j].title + '</span>'
+                                    content += '<span class="highDesc" style="white-space: pre-wrap;">' + retorno[j].brief_description + '</span>'
+                                    content += '<div class="highButtons"> '
+                                    content += '<a class="highBuy" onclick="store()" >Comprar</a>'
+                                    content += '<a class="highRead" onclick="store()" >Ler mais</a>'
+                                    content += '</div>'
+                                    content += '</div>'
+                                    content += '<form>'
+                                    content += '</div>'
+                                    
+                            
+
+                                contentDot +='<span class="highDots" ></span>';
+                                
+                                
+
+                               
+                            }
+                            header.innerHTML += content;
+                            contentDot +='</div>';
+                            header.innerHTML += contentDot;
+                            showSlides(highSlideIndex.val, "highlight", "highDots", highSlideIndex);
+
+                            contentPromo += '<div class="sale1" id="buyS">';
+                            contentPromo += '<form>';
+                            contentPromo += '<input type="hidden" name="game1" id="gameNameInput" value="' + retorno[1].title + '" />';
+                            contentPromo += '<div class="saleImageD">';
+                            contentPromo += '<a onclick="store()">';
+                            contentPromo += '<image id="saleImage" src="uploads/' + retorno[1].image + '" width="330" height="185">';
+                            contentPromo += '<span id="discountBanner">50%</span>';
+                            contentPromo += '</image>';
+                            contentPromo += '</a>';
+                            contentPromo += '</div>';
+                            contentPromo += '</form>';
+                            contentPromo += '<div class="expand">';
+                            contentPromo += '<span id="angleRightIcon"><i id="angIcon" class="fa-solid fa-angle-right"></i></span>';
+                            contentPromo += '</div>';
+                            contentPromo += '</div>';
+
+                            contentPromo += '<div class="sale1" id="buyS">';
+                            contentPromo += '<form>';
+                            contentPromo += '<input type="hidden" name="game1" id="gameNameInput" value="' + retorno[11].title + '" />';
+                            contentPromo += '<div class="saleImageD">';
+                            contentPromo += '<a onclick="store()">';
+                            contentPromo += '<image id="saleImage" src="uploads/' + retorno[11].image + '" width="330" height="185">';
+                            contentPromo += '<span id="discountBanner">50%</span>';
+                            contentPromo += '</image>';
+                            contentPromo += '</a>';
+                            contentPromo += '</div>';
+                            contentPromo += '</form>';
+                            contentPromo += '<div class="expand">';
+                            contentPromo += '<span id="angleRightIcon"><i id="angIcon" class="fa-solid fa-angle-right"></i></span>';
+                            contentPromo += '</div>';
+                            contentPromo += '</div>';
+
+                            contentPromo += '<div class="sale1" id="buyS">';
+                            contentPromo += '<form>';
+                            contentPromo += '<input type="hidden" name="game1" id="gameNameInput" value="' + retorno[7].title + '" />';
+                            contentPromo += '<div class="saleImageD">';
+                            contentPromo += '<a onclick="store()">';
+                            contentPromo += '<image id="saleImage" src="uploads/' + retorno[7].image + '" width="330" height="185">';
+                            contentPromo += '<span id="discountBanner">50%</span>';
+                            contentPromo += '</image>';
+                            contentPromo += '</a>';
+                            contentPromo += '</div>';
+                            contentPromo += '</form>';
+                            contentPromo += '<div class="expand">';
+                            contentPromo += '<span id="angleRightIcon"><i id="angIcon" class="fa-solid fa-angle-right"></i></span>';
+                            contentPromo += '</div>';
+                            contentPromo += '</div>';
+                            
+                            promo.innerHTML += contentPromo;
+                                
+
+                            for(k = 12; k<18; k++){
+                                contentRec += '<div class="recGame fadeSt" id="buyS">';
+                                contentRec += '<form>';
+                                contentRec += '<input type="hidden" name="game1" id="gameNameInput" value="' + retorno[k].title + '" />';
+                                contentRec += '</form>';
+                                contentRec += '<a onclick="store()" id="recImg">';
+                                contentRec += '<img class="fyImg" src="uploads/' + retorno[k].image + '"height="305" width="575"  />';
+                                contentRec += '</a>';
+                                contentRec += '<div class="forYouContent">';
+                                contentRec += '<a onclick="store()" id="recTitle">' + retorno[k].title + '</a>';
+                                contentRec += '<div class="recTags">';
+                                contentRec += '<span class="tag">' + retorno[k].tag1 + '</span>';
+                                contentRec += '<span class="tag">' + retorno[k].tag2 + '</span>';
+                                contentRec += '<span class="tag">' + retorno[k].tag3 + '</span>';
+                                contentRec += '</div>';
+                                contentRec += '<div class="Platforms">';
+                                contentRec += '<i class="fa-brands fa-windows"></i>';
+                                contentRec += '<i class="fa-brands fa-apple"></i>';
+                                contentRec += '</div>';
+                                contentRec += '<span id="recBuy">R$' + retorno[k].price + '</span>';
+                                contentRec += '</div>';
+                                
+                                contentRec += '</div>';
+
+                                contentRecDot += '<span class="recDots" ></span>';
+                            }
+
+                            contentRecDot += '</div>';
+
+                            contentRecDot += '<a class="prev" onclick="plusSlidesRec(-1)">&#10094;</a>';
+                            contentRecDot += '<a class="next" onclick="plusSlidesRec(1)">&#10095;</a>';
+                            
+                            rec.innerHTML += contentRec;
+                            rec.innerHTML += contentRecDot;
+                            showSlides(recSlideIndex.val, "recGame", "recDots", recSlideIndex);
+
+
+                            
+                
+
+                        },
+                        error: function(err){
+                            console.log(err);
+                            
+                        }
+                        
+                });
+            }
+
+            function newGames(){
+                $.ajax({
+                        type: "GET",
+                        dataType: "json",
+                        //data: data,
+                        url: "newGames.php", 
+                        success: function(retorno){
+                            console.log(retorno);
+                            newG = document.querySelector(".newGames");
+                            content = "";
+
+                            for(i = 0; i<8; i++){
+                                content += '<div class="new" id="buyS">';
+                                content += '<div class="g3">';
+                                content += '<form>';
+                                content += '<input type="hidden" name="game1" id="gameNameInput" value="' + retorno[i].title + '" />';
+                                content += '<a onclick="store()" >';
+                                content += '<img id="small" src="uploads/' + retorno[i].image + '" width="259" height="121" />' ;
+                                content += '</a>';
+                                content += '<div class="small-Information">';
+                                content += '<a onclick="store()" class="smallName" id="gameNameG">' + retorno[i].title + '</a>';
+                                content += '<p><i id="windows" class="fab fa-windows fa-lg"></i></p>';
+                                content += '<div class="smallTags">';
+                                content += '<span class="class_tag">' + retorno[i].tag1 + ',</span>';
+                                content += '<span class="class_tag">' + retorno[i].tag2 + ',</span>';
+                                content += '<span class="class_tag">' + retorno[i].tag3 + ',</span>';
+                                content += '<span class="class_tag">' + retorno[i].tag4 + '</span>';
+                                content += '</div>';
+                                content += '</div>';
+                                content += '<div class="price">';
+                                content += '<span class="priceSp">R$' + retorno[i].price + '</span>';
+                                content += '</div>';
+                                content += '</div>';
+                                content += '</div>';
+                            }
+
+                            newG.innerHTML += content;
+
+                        },
+                        error: function(err){
+                            console.log(err);
+                            
+                        }
+                        
+                });
+            }
+
+            function validSession(){
+
+                $.ajax({
+                        type: "GET",
+                        dataType: "json",
+                        //data: data,
+                        url: "validSession.php", 
+                        success: function(retorno){
+                            console.log(retorno);
+                            header = document.querySelector(".nav-links");
+                            content = "";
+                            if(retorno.logged == "false"){
+                                
+
+                                content += '<li><div class="loginButtonH">';
+                                content += '<a href="Login/Login.html" >Login</a>';
+                                content += '</div></li>';
+
+                                header.innerHTML += content;
+
+                            }
+                            else{
+
+                                for(i = 0; i < retorno.length; i++){
+                                    content += '<li><div class="headerProf">';
+                                    if(retorno[i].profile_image){
+                                        content += '<a href="Profile/profile.html" id="headImg"><image src="uploads/' + retorno[i].profile_image + '" width="40" height="40"></image></a>';
+                                    }
+                                    else{
+                                        content += '<a href="Profile/profile.html" id="headImg"><image src="home/img/iconBig.png" width="40" height="40"></image></a>';
+                                    }
+                                    
+                                    content += '<a id="userHeader" href="Profile/profile.html">' + retorno[i].username + '<i id="arrDownIcon" class="fa-solid fa-angle-down"></i></a>';
+                                    content += '<a id="headMoney" href="Cash/cash.html">R$' + retorno[i].cash + '</a>';
+                                    content += '<a id="logout" onclick="logout()">Sair</a>';
+                                    content += '</div></li>'
+                                }
+
+                                header.innerHTML += content;
+                                c = document.querySelector('#headMoney');
+                                moneyText = c.innerHTML;
+                                moneyText = moneyText.replace('.', ',');
+                                c.text = moneyText;
+                            }
+                        },
+                        error: function(err){
+                            console.log(err);
+                            
+                        }
+                        
+                });
+            }
+            
+            function logout(){
+                $.ajax({
+                        type: "GET",
+                        dataType: "json",
+                        //data: data,
+                        url: "logout.php", 
+                        success: function(retorno){
+                            console.log(retorno);
+
+                            if(retorno.logged == "false"){
+                                location.href = "index.html";
+                            }
+                           
+                        },
+                        error: function(err){
+                            console.log(err);
+                            
+                        }
+                        
+                });
+            }
+
+            function admin(){
+                $.ajax({
+                        type: "GET",
+                        dataType: "json",
+                        //data: data,
+                        url: "admin.php", 
+                        success: function(retorno){
+                            console.log(retorno);
+                            header = document.querySelector(".nav-links");
+
+    
+                            content = "";
+                            if(retorno.logged == "admin"){
+                                content += '<li><a href="Publish/publish.html">Publicar</a></li>';
+                                header.innerHTML += content;
+
+                                
+                            }
+
+                            
+                           
+                        },
+                        error: function(err){
+                            console.log(err);
+                            
+                        }
+                        
+                });
+            }
+
+            
+        </script>
+
+                    
+                        
+                    
     </body>
 
 </html>

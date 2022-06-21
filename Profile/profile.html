@@ -1,0 +1,201 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Meu Perfil</title>
+
+        <script src="https://kit.fontawesome.com/50d53b2eac.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/style.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="header">
+                <div class="headContent">
+                    <a href="../index.html"><img id="ghostLogo" src="../home/img/logofinal.svg" /> </a>                
+
+                    <div class="nav">
+                        <a href="../index.html">Home</a>
+                        <a href="../Library/library.html">Biblioteca</a>
+                        <a href="profile.html">Meu Perfil</a>
+                        <a href="">Sobre</a>
+
+                        <i id="heartIcon" class="fa-regular fa-heart"><span id="heartText">Favoritos</span></i>
+
+                        <i id="cartIcon" class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                        
+                    
+                </div>
+
+            </div>
+
+
+            <div class="prof-back">
+                <div class="content">
+
+                </div>
+
+                <div class="recent">
+                    <span>Atividade recente</span>
+                </div>
+
+                <div class="ac1">
+                    
+                </div>
+
+                <div class="ac2">
+                    
+                </div>
+
+                <div class="ac3">
+                    
+                </div>
+
+                <div class="games">
+                    <span id="gm">Jogos</span>
+                </div>
+
+            </div>
+        </div>
+
+
+        <script>
+
+            $(document).ready(validSession());
+
+            function validSession(){
+
+                $.ajax({
+                        type: "GET",
+                        dataType: "json",
+                        //data: data,
+                        url: "../validSession.php", 
+                        success: function(retorno){
+                            console.log(retorno);
+                            header = document.querySelector(".headContent");
+                            profile = document.querySelector(".content");
+
+                            content = "";
+
+                            contentProf = "";
+
+                            if(retorno.logged == "false"){
+                                
+
+                                location.href = "../Login/Login.html";
+
+                            }
+                            else{
+
+                                for(i = 0; i < retorno.length; i++){
+                                    content += '<div class="headerProf">';
+                                    if(retorno[i].profile_image){
+                                        content += '<a href="profile.html" id="headImg"><image src="../uploads/' + retorno[i].profile_image + '" width="40" height="40"></image></a>';
+                                    }
+                                    else{
+                                        content += '<a href="profile.html" id="headImg"><image src="../home/img/iconBig.png" width="40" height="40"></image></a>';
+                                    }
+                                    
+                                    content += '<a id="userHeader" href="profile.html">' + retorno[i].username + '<i id="arrDownIcon" class="fa-solid fa-angle-down"></i></a>';
+                                    content += '<a id="headMoney" href="../Cash/cash.html">R$ ' + retorno[i].cash + '</a>';
+                                    content += '<a id="logout" onclick="logout()">Sair</a>';
+                                    content += '</div>'
+
+
+
+                                    
+
+                                    if(retorno[i].profile_image){
+                                        contentProf += '<img id="avBig" src="../uploads/' + retorno[i].profile_image + '" />';
+                                    }
+                                    else{
+                                        contentProf += '<img id="avBig" src="../Home/img/iconBig.png" />';
+                                    }
+                                    
+                                    contentProf += '<div class="infoDisplay">';
+                                    contentProf += '<p><span id="nmDisplay">' + retorno[i].username + '</span></p>';
+
+                                    if(retorno[i].country){
+                                        contentProf += '<p><span id="inf">' + retorno[i].state + ', ' + retorno[i].country +'</span></p>';
+                                    }
+                                    else{
+                                        contentProf += '<p><span id="inf">Nada informado.</span></p>';
+                                    }
+                                    
+                                    if(retorno[i].about){
+                                        contentProf += '<span id="desc" style="white-space: pre-wrap;">' + retorno[i].about + '</span>';
+                                    }
+                                    else{
+                                        contentProf += '<span id="desc">Sem descrição.</span>';
+                                    }
+                                    
+                                    contentProf += '</div>';
+                                    contentProf += '<div class="levelEdit">';
+                                    contentProf += '<div class="level">';
+                                    contentProf += '<span id="lvlS">Nível</span>';
+                                    contentProf += '<span id="lvlN">1</span>';
+                                    contentProf += '</div>';
+                                    contentProf += '<a href="../Edit/edit.html">Editar perfil</a>';
+                                    contentProf += '</div>';
+                                    
+
+                                }
+
+                                header.innerHTML += content;
+
+                                profile.innerHTML += contentProf;
+
+                                c = document.querySelector('#headMoney');
+                                moneyText = c.innerHTML;
+                                moneyText = moneyText.replace('.', ',');
+                                c.text = moneyText;
+                            }
+                        },
+                        error: function(err){
+                            console.log(err);
+                            
+                        }
+                        
+                });
+            }
+
+            function logout(){
+                $.ajax({
+                        type: "GET",
+                        dataType: "json",
+                        //data: data,
+                        url: "../logout.php", 
+                        success: function(retorno){
+                            console.log(retorno);
+
+                            if(retorno.logged == "false"){
+                                location.href = "../index.html";
+                            }
+                        
+                        },
+                        error: function(err){
+                            console.log(err);
+                            
+                        }
+                        
+                });
+            }
+
+        </script>
+    </body>
+</html>
